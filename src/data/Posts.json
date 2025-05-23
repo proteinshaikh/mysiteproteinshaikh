@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "fitness-journey",
+    "title": "My Fitness Journey",
+    "date": "2025-05-01",
+    "excerpt": "How I transformed my health and built a consistent workout routine."
+  },
+  {
+    "slug": "react-hooks",
+    "title": "Understanding React Hooks",
+    "date": "2025-04-15",
+    "excerpt": "A deep dive into React Hooks and how they simplify React development."
+  }
+]
