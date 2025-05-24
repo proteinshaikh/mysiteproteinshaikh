@@ -1,5 +1,5 @@
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,29 +11,38 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 import Fitness from './pages/Fitness';
 import Stocks from './pages/Stocks';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
-    return (
-        <Router>
-            <div className="flex flex-col min-h-screen">
-                <Navbar/>
-                <main className="flex-grow">
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/about" element={<About/>}/>
-                        <Route path="/articles" element={<Articles/>}/>
-                        <Route path="/projects" element={<Projects/>}/>
-                        <Route path="/contact" element={<Contact/>}/>
-                        <Route path="/blog" element={<Blog/>}/>
-                        <Route path="/blog/:slug" element={<Post/>}/>
-                        <Route path="/fitness" element={<Fitness/>}/>
-                        <Route path="/stocks" element={<Stocks/>}/>
-                    </Routes>
-                </main>
-                <Footer/>
-            </div>
-        </Router>
-    );
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
+  return (
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Post />} />
+            <Route path="/fitness" element={<Fitness />} />
+            <Route path="/stocks" element={<Stocks />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

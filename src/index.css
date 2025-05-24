@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-base text-foreground bg-background;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading text-foreground;
+}
+
+a {
+  @apply text-primary hover:underline;
+}
