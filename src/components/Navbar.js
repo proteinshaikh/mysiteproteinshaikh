@@ -1,14 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 import LangToggle from '../utils/LangToggle';
 
 function Navbar() {
-    const {i18n} = useTranslation();
-
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
 
     return (
         <nav className="bg-white shadow">
