@@ -16,7 +16,7 @@ function Projects() {
         <h3 className="text-2xl font-bold mb-4 text-primary">🔥 How I Lost 17 kg in 4 Months with Calorie Deficit</h3>
 
         <p className="mb-4">
-          In early 2024, I weighed 89 kg. Tired of low energy and discomfort, I committed to transforming my body with
+          In early 2025, I weighed 89 kg. Tired of low energy and discomfort, I committed to transforming my body with
           no pills, no shortcuts — just science, simplicity, and structure.
         </p>
 

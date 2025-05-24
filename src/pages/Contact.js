@@ -8,8 +8,8 @@ function Contact() {
                 Feel free to reach out to me via email or connect with me on social media.
             </p>
             <ul className="text-gray-700">
-                <li>Email: <a href="mailto:proteinshaikh@example.com"
-                              className="text-blue-500 hover:underline">proteinshaikh@example.com</a></li>
+                <li>Email: <a href="mailto:zeeshanshaikhonline@gmail.com"
+                              className="text-blue-500 hover:underline">zeeshanshaikhonline@gmail.com</a></li>
                 <li>GitHub: <a href="https://github.com/proteinshaikh"
                                className="text-blue-500 hover:underline">github.com/proteinshaikh</a></li>
                 <li>LinkedIn: <a href="https://linkedin.com/in/proteinshaikh"
