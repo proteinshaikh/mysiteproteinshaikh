@@ -1,0 +1,25 @@
+{
+  "welcome": "Welcome to ProteinShaikh",
+  "about": {
+    "heading": "About Me",
+    "intro": "I'm Zeeshan — aka ProteinShaikh. A software developer who believes in writing clean code, lifting heavy weights, and investing with logic and long-term vision.",
+    "secondary": "Whether it’s building full-stack apps or breaking personal PRs at the gym, I love systems, strategies, and scaling both projects and people.",
+    "fitnessTitle": "My Fitness Code",
+    "fitnessText": "Lost 17 kg using calorie deficit, strength training, and consistency. Fitness taught me discipline, patience, and how to push past limits.",
+    "financeTitle": "My Financial Stack",
+    "financeText": "I follow Buffett-style investing, automate my savings, and track everything like a data geek.",
+    "siteTitle": "Why This Site?",
+    "siteText": "To share everything I learn. Dev wisdom, lifting strategies, and wealth principles. This is where code meets core — mental, physical, financial.",
+    "closing": "Thanks for visiting. Let’s grow together — code, lift, invest, repeat. 💪👨‍💻📈"
+  },
+  "projects": "Projects",
+  "contact": "Contact",
+  "articles": "Articles",
+  "aboutMeIntro": "I’m Zeeshan. I’m a Developer, Fitness Enthusiast, and Long-Term Investor.",
+  "home": {
+    "hey": "Hey",
+    "friends": "Friends",
+    "intro": "I’m Zeeshan. I’m a Developer, Fitness Enthusiast, and Long-Term Investor. This site is where I share everything I’m learning about code, health, and building a better life."
+  },
+  "aboutLabel": "About Me"
+}
