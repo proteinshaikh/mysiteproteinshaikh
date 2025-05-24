@@ -49,7 +49,7 @@ function Projects() {
                         alt="Weight loss progress"
                         className="w-full max-w-md mx-auto rounded-lg shadow-md"
                     />
-                    <figcaption className="text-sm text-gray-500 mt-2">My progress from 89 kg to 72 kg (Jan–May 2024)
+                    <figcaption className="text-sm text-gray-500 mt-2">My progress from 89 kg to 72 kg (Jan–May 2025)
                     </figcaption>
                 </figure>
 
