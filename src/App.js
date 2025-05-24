@@ -13,6 +13,7 @@ import Fitness from './pages/Fitness';
 import Stocks from './pages/Stocks';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/blog/:slug" element={<Post />} />
             <Route path="/fitness" element={<Fitness />} />
             <Route path="/stocks" element={<Stocks />} />
+            <Route path="/projects/:slug" element={<ProjectDetails />} />
           </Routes>
         </main>
         <Footer />
