@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 function Home() {
   const { t } = useTranslation();
 
   return (
+        <>
+      <Helmet>
+        <title>Home | ProteinShaikh</title>
+      </Helmet>
     <section className="bg-background py-20 px-6">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
 
@@ -52,6 +57,7 @@ function Home() {
         </div>
       </div>
     </section>
+          </>
   );
 }
 
