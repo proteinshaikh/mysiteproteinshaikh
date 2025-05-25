@@ -77,13 +77,15 @@ function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white px-4 pb-4 space-y-2">
-                    <MobileNavItem to="/about">About</MobileNavItem>
-                    <MobileNavItem to="/tech">Tech</MobileNavItem>
-                    <MobileNavItem to="/fitness">Fitness</MobileNavItem>
-                    <MobileNavItem to="/stocks">Stocks</MobileNavItem>
-                    <MobileNavItem to="/contact">Contact</MobileNavItem>
-                    <LangToggle/>
+                <div className="md:hidden bg-white px-4 pb-4 space-y-3 pt-2">
+                    <MobileNavItem to="/about" onClick={() => setIsOpen(false)}>About</MobileNavItem>
+                    <MobileNavItem to="/tech" onClick={() => setIsOpen(false)}>Tech</MobileNavItem>
+                    <MobileNavItem to="/fitness" onClick={() => setIsOpen(false)}>Fitness</MobileNavItem>
+                    <MobileNavItem to="/stocks" onClick={() => setIsOpen(false)}>Stocks</MobileNavItem>
+                    <MobileNavItem to="/contact" onClick={() => setIsOpen(false)}>Contact</MobileNavItem>
+                    <div className="mt-2">
+                        <LangToggle/>
+                    </div>
                 </div>
             )}
         </nav>
@@ -101,14 +103,16 @@ const NavItem = ({to, children}) => (
 );
 
 // Mobile Nav Link
-const MobileNavItem = ({to, children}) => (
+const MobileNavItem = ({to, children, onClick}) => (
     <Link
         to={to}
-        className="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition"
+        onClick={onClick}
+        className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 font-medium shadow-sm hover:bg-gray-100 transition"
     >
         {children}
     </Link>
 );
+
 
 // Dropdown for Articles under Stocks
 const DropdownNavItem = ({title, baseLink, articles}) => {
