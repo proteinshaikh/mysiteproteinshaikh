@@ -43,7 +43,7 @@ npm run build          # Build for production
 
 ## 🌐 Live Site
 
-🔗 [https://proteinshaikh.netlify.app](https://proteinshaikh.com)
+🔗 [https://proteinshaikh.com](https://proteinshaikh.com)
 
 ---
 
