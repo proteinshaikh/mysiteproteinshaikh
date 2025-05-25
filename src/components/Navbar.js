@@ -96,16 +96,6 @@ function Navbar() {
     );
 }
 
-// Standard Nav Link
-const NavItem = ({to, children}) => (
-    <Link
-        to={to}
-        className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-200 font-medium"
-    >
-        {children}
-    </Link>
-);
-
 // Mobile Nav Link
 const MobileNavItem = ({to, children, onClick}) => (
     <Link
