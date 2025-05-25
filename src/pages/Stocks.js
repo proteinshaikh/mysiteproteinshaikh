@@ -1,42 +1,66 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import ArticleCard from '../components/ArticleCard';
 
 const stockTips = [
-    {
-        title: "Invest in What You Understand",
-        content: "Like Warren Buffet, stick to businesses and industries you deeply understand before investing.",
-    },
-    {
-        title: "Be Greedy When Others Are Fearful",
-        content: "Market downturns are often the best time to buy — if you're investing for the long term.",
-    },
-    {
-        title: "Focus on the Long Term",
-        content: "Avoid chasing short-term gains. Look for businesses with sustainable competitive advantages.",
-    },
-    {
-        title: "Diversify, But Not Too Much",
-        content: "Buffet suggests 5–10 great investments you know well is better than over-diversifying.",
-    },
-    {
-        title: "Cash is Not Trash",
-        content: "Always keep some cash reserve to take advantage of future opportunities."
-    }
+  {
+    title: 'Invest in What You Understand 📚',
+    excerpt: 'Like Warren Buffet, stick to businesses and industries you deeply understand before investing.',
+    link: '/stocks/invest-in-what-you-understand',
+  },
+  {
+    title: 'Be Greedy When Others Are Fearful 😨',
+    excerpt: 'Market downturns are often the best time to buy — if you\'re investing for the long term.',
+    link: '/stocks/be-greedy-when-others-are-fearful',
+  },
+  {
+    title: 'Focus on the Long Term ⏳',
+    excerpt: 'Avoid chasing short-term gains. Look for businesses with sustainable competitive advantages.',
+    link: '/stocks/focus-on-the-long-term',
+  },
 ];
 
 function Stocks() {
-    return (
-        <section className="container mx-auto px-4 py-16">
-            <h2 className="text-3xl font-bold mb-8 text-primary">📊 Investment Wisdom</h2>
-            <div className="grid gap-6 md:grid-cols-2">
-                {stockTips.map((tip, idx) => (
-                    <div key={idx} className="p-6 border border-gray-200 rounded shadow hover:shadow-lg bg-white">
-                        <h3 className="text-xl font-semibold text-accent mb-2">{tip.title}</h3>
-                        <p className="text-gray-700">{tip.content}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
+  return (
+    <>
+      <Helmet>
+        <title>Stocks | ProteinShaikh</title>
+      </Helmet>
+      <section className="container mx-auto px-4 py-8 flex justify-center items-start min-h-[80vh] bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+
+        {/* Decorative Background */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
+          <svg className="w-full h-full object-contain" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 50C70 30, 130 30, 150 50C170 70, 170 130, 150 150C130 170, 70 170, 50 150C30 130, 30 70, 50 50" stroke="#4B5563" strokeWidth="4" opacity="0.3"/>
+          </svg>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-4xl w-full text-center relative z-10">
+          <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">
+            📊 Investment Wisdom
+          </h2>
+          <p className="text-gray-600 mb-12 text-lg animate-fade-in-up max-w-2xl mx-auto">
+            Dive into my collection of stock market insights, inspired by timeless strategies to guide your investment journey. 💡
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {stockTips.map((tip, index) => (
+              <div
+                key={index}
+                className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble"
+              >
+                <ArticleCard
+                  title={tip.title}
+                  excerpt={tip.excerpt}
+                  link={tip.link}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default Stocks;
