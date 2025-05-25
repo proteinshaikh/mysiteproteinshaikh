@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import About from './pages/About';
 import Articles from './pages/Tech';
 import Contact from './pages/Contact';
 import Fitness from './pages/Fitness';
@@ -39,7 +38,6 @@ function App() {
                 <main className="flex-grow">
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path="/about" element={<About/>}/>
                         <Route path="/tech" element={<Articles/>}/>
                         <Route path="/fitness" element={<Fitness/>}/>
                         <Route path="/stocks" element={<Stocks/>}/>

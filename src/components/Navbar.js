@@ -66,11 +66,16 @@ function Navbar() {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-4 relative">
-                    <NavItem to="/about">About</NavItem>
                     <DropdownNavItem title="Tech" baseLink="/tech" articles={techArticles}/>
                     <DropdownNavItem title="Fitness" baseLink="/fitness" articles={fitnessArticles}/>
                     <DropdownNavItem title="Stocks" baseLink="/stocks" articles={stockArticles}/>
-                    <NavItem to="/contact">Contact</NavItem>
+                    <a
+                        href="#contact"
+                        className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-200 font-medium"
+                    >
+                        Contact
+                    </a>
+
                     <LangToggle/>
                 </div>
             </div>
@@ -78,7 +83,6 @@ function Navbar() {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden bg-white px-4 pb-4 space-y-3 pt-2">
-                    <MobileNavItem to="/about" onClick={() => setIsOpen(false)}>About</MobileNavItem>
                     <MobileNavItem to="/tech" onClick={() => setIsOpen(false)}>Tech</MobileNavItem>
                     <MobileNavItem to="/fitness" onClick={() => setIsOpen(false)}>Fitness</MobileNavItem>
                     <MobileNavItem to="/stocks" onClick={() => setIsOpen(false)}>Stocks</MobileNavItem>

@@ -20,7 +20,7 @@ function Articles() {
 
         <div className="max-w-4xl w-full text-center">
           <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">
-            Explore My Articles! 📝
+            Explore Tech with me! 📝
           </h2>
           <p className="text-gray-600 mb-12 text-lg animate-fade-in-up max-w-2xl mx-auto">
             Dive into my thoughts on tech, fitness, and finance. Find insights to inspire and inform! 🚀
