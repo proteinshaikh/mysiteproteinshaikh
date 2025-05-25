@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import LangToggle from '../utils/LangToggle';
+import {useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const stockArticles = [
     {
@@ -41,6 +43,18 @@ const techArticles = [
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    // Auto-close on scroll for mobile
+    useEffect(() => {
+        const handleScroll = () => {
+            if (isOpen) {
+                setIsOpen(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isOpen]);
 
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -97,15 +111,32 @@ function Navbar() {
 }
 
 // Mobile Nav Link
-const MobileNavItem = ({to, children, onClick}) => (
-    <Link
-        to={to}
-        onClick={onClick}
-        className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 font-medium shadow-sm hover:bg-gray-100 transition"
-    >
-        {children}
-    </Link>
-);
+
+const MobileNavItem = ({to, children, onClick}) => {
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        onClick?.();
+        if (to === '/contact' || to === '#contact') {
+            e.preventDefault();
+            navigate('/');
+            setTimeout(() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({behavior: 'smooth'});
+            }, 100); // Delay to allow route transition
+        }
+    };
+
+    return (
+        <Link
+            to={to}
+            onClick={handleClick}
+            className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-800 font-medium shadow-sm hover:bg-gray-100 transition"
+        >
+            {children}
+        </Link>
+    );
+};
 
 
 // Dropdown for Articles under Stocks
