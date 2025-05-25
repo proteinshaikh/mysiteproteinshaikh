@@ -2,21 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import ArticleCard from '../components/ArticleCard';
 
-const articles = [
+const tech = [
   {
     title: 'Understanding React Hooks 📚',
     excerpt: 'A deep dive into React Hooks and how they can simplify your code.',
-    link: '/articles/understanding-react-hooks',
-  },
-  {
-    title: 'My Fitness Transformation Journey 💪',
-    excerpt: 'Sharing the ups and downs of my path to a healthier lifestyle.',
-    link: '/articles/my-fitness-transformation-journey',
-  },
-  {
-    title: 'Investment Strategies for Beginners 💸',
-    excerpt: 'An overview of investment approaches suitable for those starting out.',
-    link: '/articles/investment-strategies',
+    link: '/tech/understanding-react-hooks',
   },
 ];
 
@@ -36,7 +26,7 @@ function Articles() {
             Dive into my thoughts on tech, fitness, and finance. Find insights to inspire and inform! 🚀
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article, index) => (
+            {tech.map((article, index) => (
               <div
                 key={index}
                 className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble"

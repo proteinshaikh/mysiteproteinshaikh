@@ -48,10 +48,10 @@ function Home() {
               {t('aboutLabel')}
             </Link>
             <Link
-              to="/articles"
+              to="/tech"
               className="px-6 py-2 bg-accent text-white rounded-full shadow hover:bg-primary transition"
             >
-              {t('articles')}
+              {t('tech')}
             </Link>
           </div>
         </div>
