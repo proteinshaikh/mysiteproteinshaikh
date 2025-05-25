@@ -11,16 +11,19 @@ import Articles from './pages/Tech';
 import Contact from './pages/Contact';
 import Fitness from './pages/Fitness';
 import Stocks from './pages/Stocks';
+import Opinions from './pages/Opinions';
 
-import ReactHooksGuide from './tech/ReactHooksGuide';
+import ReactHooksGuide from './files/tech/ReactHooksGuide';
 
-import InvestInWhatYouUnderstand from './stocks/InvestInWhatYouUnderstand';
-import BeGreedyWhenOthersAreFearful from './stocks/BeGreedyWhenOthersAreFearful';
-import FocusOnTheLongTerm from './stocks/FocusOnTheLongTerm';
+import InvestInWhatYouUnderstand from './files/stocks/InvestInWhatYouUnderstand';
+import BeGreedyWhenOthersAreFearful from './files/stocks/BeGreedyWhenOthersAreFearful';
+import FocusOnTheLongTerm from './files/stocks/FocusOnTheLongTerm';
 
-import DevToDefined from './fitness/DevToDefined';
-import StartWithCompoundMovements from './fitness/StartWithCompoundMovements';
-import TrackYourProgress from './fitness/TrackYourProgress';
+import DevToDefined from './files/fitness/DevToDefined';
+import StartWithCompoundMovements from './files/fitness/StartWithCompoundMovements';
+import TrackYourProgress from './files/fitness/TrackYourProgress';
+
+import GeogOfBelief from './files/opinions/GeogOfBelief';
 
 
 function App() {
@@ -54,6 +57,8 @@ function App() {
                         <Route path="/fitness/dev-to-defined" element={<DevToDefined/>}/>
                         <Route path="/fitness/start-with-compound-movements" element={<StartWithCompoundMovements/>}/>
                         <Route path="/fitness/track-your-progress" element={<TrackYourProgress/>}/>
+
+                        <Route path="/opinions/geography-of-belief" element={<GeogOfBelief/>}/>
                     </Routes>
                 </main>
                 <Footer/>
