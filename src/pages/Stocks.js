@@ -4,19 +4,9 @@ import ArticleCard from '../components/ArticleCard';
 
 const stockTips = [
   {
-    title: 'Invest in What You Understand 📚',
-    excerpt: 'Like Warren Buffet, stick to businesses and industries you deeply understand before investing.',
-    link: '/stocks/invest-in-what-you-understand',
-  },
-  {
-    title: 'Be Greedy When Others Are Fearful 😨',
-    excerpt: 'Market downturns are often the best time to buy — if you\'re investing for the long term.',
-    link: '/stocks/be-greedy-when-others-are-fearful',
-  },
-  {
-    title: 'Focus on the Long Term ⏳',
-    excerpt: 'Avoid chasing short-term gains. Look for businesses with sustainable competitive advantages.',
-    link: '/stocks/focus-on-the-long-term',
+    title: 'Investment lessons from Warren Buffet',
+    excerpt: 'Buffet lessons.',
+    link: '/stocks/buffet-lessons',
   },
 ];
 

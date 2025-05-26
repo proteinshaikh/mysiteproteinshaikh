@@ -6,16 +6,8 @@ import {useNavigate} from 'react-router-dom';
 
 const stockArticles = [
     {
-        title: 'Invest in What You Understand 📚',
-        link: '/stocks/invest-in-what-you-understand',
-    },
-    {
-        title: 'Be Greedy When Others Are Fearful 😨',
-        link: '/stocks/be-greedy-when-others-are-fearful',
-    },
-    {
-        title: 'Focus on the Long Term ⏳',
-        link: '/stocks/focus-on-the-long-term',
+        title: 'Investment lessons from Warren Buffet.',
+        link: '/stocks/buffet-lessons',
     },
 ];
 
@@ -45,6 +37,14 @@ const opinionArticles = [
     {
         title: 'The Geography of Belief: Coincidence or Conditioning?',
         link: '/opinions/geography-of-belief',
+    },
+    {
+        title: 'The Interplay of Money and Risk',
+        link: '/opinions/money-and-risk',
+    },
+    {
+        title: '12 Lessons from Steve Jobs (via Guy Kawasaki)',
+        link: '/opinions/steve-jobs',
     },
 ];
 

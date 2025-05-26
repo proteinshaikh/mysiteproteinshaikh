@@ -15,15 +15,15 @@ import Opinions from './pages/Opinions';
 
 import ReactHooksGuide from './files/tech/ReactHooksGuide';
 
-import InvestInWhatYouUnderstand from './files/stocks/InvestInWhatYouUnderstand';
-import BeGreedyWhenOthersAreFearful from './files/stocks/BeGreedyWhenOthersAreFearful';
-import FocusOnTheLongTerm from './files/stocks/FocusOnTheLongTerm';
+import BuffetLessons from './files/stocks/BuffettInvestmentLessons';
 
 import DevToDefined from './files/fitness/DevToDefined';
 import StartWithCompoundMovements from './files/fitness/StartWithCompoundMovements';
 import TrackYourProgress from './files/fitness/TrackYourProgress';
 
 import GeogOfBelief from './files/opinions/GeogOfBelief';
+import MoneyAndRisk from './files/opinions/InterplayOfMoneyAndRisk';
+import LessonsFromSteveJobs from "./files/opinions/LessonsFromSteveJobs";
 
 
 function App() {
@@ -50,16 +50,15 @@ function App() {
 
                         <Route path="/tech/understanding-react-hooks" element={<ReactHooksGuide/>}/>
 
-                        <Route path="/stocks/invest-in-what-you-understand" element={<InvestInWhatYouUnderstand/>}/>
-                        <Route path="/stocks/be-greedy-when-others-are-fearful"
-                               element={<BeGreedyWhenOthersAreFearful/>}/>
-                        <Route path="/stocks/focus-on-the-long-term" element={<FocusOnTheLongTerm/>}/>
+                        <Route path="/stocks/buffet-lessons" element={<BuffetLessons/>}/>
 
                         <Route path="/fitness/dev-to-defined" element={<DevToDefined/>}/>
                         <Route path="/fitness/start-with-compound-movements" element={<StartWithCompoundMovements/>}/>
                         <Route path="/fitness/track-your-progress" element={<TrackYourProgress/>}/>
 
                         <Route path="/opinions/geography-of-belief" element={<GeogOfBelief/>}/>
+                        <Route path="/opinions/money-and-risk" element={<MoneyAndRisk/>}/>
+                        <Route path="/opinions/steve-jobs" element={<LessonsFromSteveJobs/>}/>
                     </Routes>
                 </main>
                 <Footer/>

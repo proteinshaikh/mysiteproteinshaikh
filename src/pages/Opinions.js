@@ -8,6 +8,16 @@ const tech = [
     excerpt: 'Faith',
     link: '/opinions/geography-of-belief',
   },
+    {
+    title: 'The Interplay of Money and Risk',
+    excerpt: 'Money and Risk',
+    link: '/opinions/money-and-risk',
+  },
+    {
+    title: '12 Lessons from Steve Jobs (via Guy Kawasaki)',
+    excerpt: 'Jobs Lessons',
+    link: '/opinions/steve-jobs',
+  },
 ];
 
 function Opinions() {
