@@ -34,7 +34,7 @@ function BuffettInvestmentLessons() {
                     {/* Left: Image + Caption */}
                     <div className="md:w-64 w-full flex flex-col items-center md:items-start">
                         <img
-                            src={`${process.env.PUBLIC_URL}/buffet.jpg`}
+                            src={`${process.env.PUBLIC_URL}/warren.jpg`}
                             alt="The Oracle of Omaha"
                             className="w-full rounded-xl shadow-lg"
                         />
