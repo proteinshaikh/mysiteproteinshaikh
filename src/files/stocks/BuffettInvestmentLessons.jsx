@@ -31,28 +31,29 @@ function BuffettInvestmentLessons() {
                 <h2 className="text-3xl font-semibold mt-8 mb-4">💸 Financial Discipline</h2>
 
                 <div className="md:flex md:items-start md:gap-6 mb-6">
-                    <img
-                        src={`${process.env.PUBLIC_URL}/buffet.jpg`}
-                        alt="The Oracle of Omaha"
-                        className="w-full md:w-64 rounded-xl shadow-lg mb-4 md:mb-0"
-                    />
-                    <div>
-                        <p className="text-sm text-gray-500 mb-4 text-center md:text-left">The Oracle of Omaha</p>
-                        <ul className="list-disc list-inside space-y-2">
-                            <li>Buy companies with <strong>low P/E ratios</strong>—high P/E may mean overpricing.</li>
-                            <li>A <strong>dividend-paying company</strong> should ideally have <strong>zero
-                                debt</strong>.
-                            </li>
-                            <li><strong>CEO compensation</strong> much higher than peers is a red flag.</li>
-                            <li>Keep a <strong>pile of cash</strong> for unexpected opportunities.</li>
-                            <li>Invest only when the business is available at a <strong>discount to intrinsic
-                                value</strong>.
-                            </li>
-                            <li><strong>Buybacks</strong> are a good signal—if a company buys back its shares, consider
-                                buying.
-                            </li>
-                        </ul>
+                    {/* Left: Image + Caption */}
+                    <div className="md:w-64 w-full flex flex-col items-center md:items-start">
+                        <img
+                            src={`${process.env.PUBLIC_URL}/buffet.jpg`}
+                            alt="The Oracle of Omaha"
+                            className="w-full rounded-xl shadow-lg"
+                        />
+                        <p className="text-sm text-gray-500 mt-2 text-center md:text-left">The Oracle of Omaha</p>
                     </div>
+
+                    {/* Right: Text */}
+                    <ul className="list-disc list-inside space-y-2 mt-4 md:mt-0">
+                        <li>Buy companies with <strong>low P/E ratios</strong>—high P/E may mean overpricing.</li>
+                        <li>A <strong>dividend-paying company</strong> should ideally have <strong>zero debt</strong>.
+                        </li>
+                        <li><strong>CEO compensation</strong> much higher than peers is a red flag.</li>
+                        <li>Keep a <strong>pile of cash</strong> for unexpected opportunities.</li>
+                        <li>Invest only when the business is available at a <strong>discount to intrinsic value</strong>.
+                        </li>
+                        <li><strong>Buybacks</strong> are a good signal—if a company buys back its shares, consider
+                            buying.
+                        </li>
+                    </ul>
                 </div>
 
 
