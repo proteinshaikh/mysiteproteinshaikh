@@ -6,21 +6,7 @@ function BuffettInvestmentLessons() {
         <>
             <Helmet>
                 <title>Investment Lessons from Warren Buffett | ProteinShaikh</title>
-                <meta property="og:title" content="Investment Lessons from Warren Buffett"/>
-                <meta property="og:description"
-                      content="Timeless lessons from Warren Buffett on investing wisely, avoiding fads, and mastering business fundamentals."/>
-                <meta property="og:image" content="https://proteinshaikh.com/images/warren.jpg"/>
-                <meta property="og:url" content="https://proteinshaikh.com/stocks/buffet-lessons"/>
-                <meta property="og:type" content="article"/>
-
-                {/* Twitter Card */}
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content="Investment Lessons from Warren Buffett"/>
-                <meta name="twitter:description"
-                      content="Warren Buffett’s timeless investing wisdom for long-term wealth creation."/>
-                <meta name="twitter:image" content="https://proteinshaikh.com/images/warren.jpg"/>
             </Helmet>
-
             <section className="prose prose-lg max-w-4xl mx-auto px-4 py-12">
                 <h1 className="text-4xl font-bold text-primary mb-4">📈 Investment Lessons from Warren Buffett</h1>
 
