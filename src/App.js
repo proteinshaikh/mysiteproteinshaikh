@@ -11,7 +11,7 @@ import Articles from './pages/Tech';
 import Contact from './pages/Contact';
 import Fitness from './pages/Fitness';
 import Stocks from './pages/Stocks';
-import Opinions from './pages/Opinions';
+import Blogs from './pages/Blogs';
 
 import ReactHooksGuide from './files/tech/ReactHooksGuide';
 
@@ -21,9 +21,10 @@ import DevToDefined from './files/fitness/DevToDefined';
 import StartWithCompoundMovements from './files/fitness/StartWithCompoundMovements';
 import TrackYourProgress from './files/fitness/TrackYourProgress';
 
-import GeogOfBelief from './files/opinions/GeogOfBelief';
-import MoneyAndRisk from './files/opinions/InterplayOfMoneyAndRisk';
-import LessonsFromSteveJobs from "./files/opinions/LessonsFromSteveJobs";
+import GeogOfBelief from './files/blogs/GeogOfBelief';
+import MoneyAndRisk from './files/blogs/InterplayOfMoneyAndRisk';
+import LessonsFromSteveJobs from "./files/blogs/LessonsFromSteveJobs";
+import Books from "./files/blogs/Books";
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
                         <Route path="/tech" element={<Articles/>}/>
                         <Route path="/fitness" element={<Fitness/>}/>
                         <Route path="/stocks" element={<Stocks/>}/>
-                        <Route path="/opinions" element={<Opinions/>}/>
+                        <Route path="/blogs" element={<Blogs/>}/>
                         <Route path="/contact" element={<Contact/>}/>
 
 
@@ -56,9 +57,10 @@ function App() {
                         <Route path="/fitness/start-with-compound-movements" element={<StartWithCompoundMovements/>}/>
                         <Route path="/fitness/track-your-progress" element={<TrackYourProgress/>}/>
 
-                        <Route path="/opinions/geography-of-belief" element={<GeogOfBelief/>}/>
-                        <Route path="/opinions/money-and-risk" element={<MoneyAndRisk/>}/>
-                        <Route path="/opinions/steve-jobs" element={<LessonsFromSteveJobs/>}/>
+                        <Route path="/blogs/geography-of-belief" element={<GeogOfBelief/>}/>
+                        <Route path="/blogs/money-and-risk" element={<MoneyAndRisk/>}/>
+                        <Route path="/blogs/steve-jobs" element={<LessonsFromSteveJobs/>}/>
+                        <Route path="/blogs/books" element={<Books />}/>
                     </Routes>
                 </main>
                 <Footer/>

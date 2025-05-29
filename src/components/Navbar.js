@@ -33,18 +33,22 @@ const techArticles = [
     },
 ];
 
-const opinionArticles = [
+const blogsArticles = [
     {
         title: 'The Geography of Belief: Coincidence or Conditioning?',
-        link: '/opinions/geography-of-belief',
+        link: '/blogs/geography-of-belief',
     },
     {
         title: 'The Interplay of Money and Risk',
-        link: '/opinions/money-and-risk',
+        link: '/blogs/money-and-risk',
     },
     {
         title: '12 Lessons from Steve Jobs (via Guy Kawasaki)',
-        link: '/opinions/steve-jobs',
+        link: '/blogs/steve-jobs',
+    },
+    {
+        title: 'Best Books to Read in 2025',
+        link: '/blogs/books',
     },
 ];
 
@@ -90,7 +94,7 @@ function Navbar() {
                     <DropdownNavItem title="Tech" baseLink="/tech" articles={techArticles}/>
                     <DropdownNavItem title="Fitness" baseLink="/fitness" articles={fitnessArticles}/>
                     <DropdownNavItem title="Stocks" baseLink="/stocks" articles={stockArticles}/>
-                    <DropdownNavItem title="Opinions" baseLink="/opinions" articles={opinionArticles}/>
+                    <DropdownNavItem title="Blogs" baseLink="/blogs" articles={blogsArticles}/>
                     <a
                         href="#contact"
                         className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-200 font-medium"
@@ -108,7 +112,7 @@ function Navbar() {
                     <MobileNavItem to="/tech" onClick={() => setIsOpen(false)}>Tech</MobileNavItem>
                     <MobileNavItem to="/fitness" onClick={() => setIsOpen(false)}>Fitness</MobileNavItem>
                     <MobileNavItem to="/stocks" onClick={() => setIsOpen(false)}>Stocks</MobileNavItem>
-                    <MobileNavItem to="/opinions" onClick={() => setIsOpen(false)}>Opinions</MobileNavItem>
+                    <MobileNavItem to="/blogs" onClick={() => setIsOpen(false)}>Blogs</MobileNavItem>
                     <MobileNavItem to="/contact" onClick={() => setIsOpen(false)}>Contact</MobileNavItem>
                     <div className="mt-2">
                         <LangToggle/>

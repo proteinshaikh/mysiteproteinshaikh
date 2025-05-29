@@ -4,17 +4,27 @@ import ArticleCard from '../components/ArticleCard';
 
 const tech = [
     {
-        title: 'Understanding React Hooks 📚',
-        excerpt: 'A deep dive into React Hooks and how they can simplify your code.',
-        link: '/tech/understanding-react-hooks',
+        title: 'The Geography of Belief: Coincidence or Conditioning?',
+        excerpt: 'Faith',
+        link: '/blogs/geography-of-belief',
+    },
+    {
+        title: 'The Interplay of Money and Risk',
+        excerpt: 'Money and Risk',
+        link: '/blogs/money-and-risk',
+    },
+    {
+        title: 'Best Books to Read in 2025',
+        excerpt: 'Curated reads spanning science, finance, history, and literature',
+        link: '/blogs/books',
     },
 ];
 
-function Articles() {
+function Blogs() {
     return (
         <>
             <Helmet>
-                <title>Articles | ProteinShaikh</title>
+                <title>Opinions | ProteinShaikh</title>
             </Helmet>
             <section
                 className="container mx-auto px-4 py-8 flex justify-center items-start min-h-[80vh] bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
@@ -46,4 +56,4 @@ function Articles() {
     );
 }
 
-export default Articles;
+export default Blogs;
