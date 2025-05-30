@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React, {JSX, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -14,7 +13,6 @@ import Stocks from './pages/Stocks';
 import Blogs from './pages/Blogs';
 
 import ReactHooksGuide from './files/tech/ReactHooksGuide';
-
 import BuffetLessons from './files/stocks/BuffettInvestmentLessons';
 
 import DevToDefined from './files/fitness/DevToDefined';
@@ -23,11 +21,10 @@ import TrackYourProgress from './files/fitness/TrackYourProgress';
 
 import GeogOfBelief from './files/blogs/GeogOfBelief';
 import MoneyAndRisk from './files/blogs/InterplayOfMoneyAndRisk';
-import LessonsFromSteveJobs from "./files/blogs/LessonsFromSteveJobs";
-import Books from "./files/blogs/Books";
+import LessonsFromSteveJobs from './files/blogs/LessonsFromSteveJobs';
+import Books from './files/blogs/Books';
 
-
-function App() {
+function App(): JSX.Element {
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -48,9 +45,7 @@ function App() {
                         <Route path="/blogs" element={<Blogs/>}/>
                         <Route path="/contact" element={<Contact/>}/>
 
-
                         <Route path="/tech/understanding-react-hooks" element={<ReactHooksGuide/>}/>
-
                         <Route path="/stocks/buffet-lessons" element={<BuffetLessons/>}/>
 
                         <Route path="/fitness/dev-to-defined" element={<DevToDefined/>}/>
@@ -60,7 +55,7 @@ function App() {
                         <Route path="/blogs/geography-of-belief" element={<GeogOfBelief/>}/>
                         <Route path="/blogs/money-and-risk" element={<MoneyAndRisk/>}/>
                         <Route path="/blogs/steve-jobs" element={<LessonsFromSteveJobs/>}/>
-                        <Route path="/blogs/books" element={<Books />}/>
+                        <Route path="/blogs/books" element={<Books/>}/>
                     </Routes>
                 </main>
                 <Footer/>

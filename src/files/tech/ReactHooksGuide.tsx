@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import { Helmet } from 'react-helmet';
 
-function ReactHooksGuide() {
+function ReactHooksGuide(): JSX.Element {
   return (
     <>
       <Helmet>

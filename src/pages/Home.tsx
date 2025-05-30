@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import {Link} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import {Helmet} from 'react-helmet';
 
-function Home() {
+function Home(): JSX.Element {
     const {t} = useTranslation();
 
     return (
@@ -31,12 +31,12 @@ function Home() {
                     {/* Hero Text */}
                     <div className="w-full md:w-[55%] text-center md:text-left" data-aos="fade-up">
                         <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                            {t('home.hey')}{" "}
+                            {t('home.hey')}{' '}
                             <span className="relative inline-block">
                 <span className="relative z-10">{t('home.friends')}</span>
                 <span
                     className="absolute left-0 bottom-0 w-full h-1 bg-accent z-0 transform translate-y-1 rotate-1"></span>
-              </span>{" "}
+              </span>{' '}
                             👋
                         </h1>
 
@@ -59,21 +59,20 @@ function Home() {
             {/* About Me Section */}
             <section
                 className="container mx-auto px-4 py-16 flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-                {/* Decorative Background */}
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
                     <svg className="w-full h-full object-contain" viewBox="0 0 200 200" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M50 50C70 30, 130 30, 150 50C170 70, 170 130, 150 150C130 170, 70 170, 50 150C30 130, 30 70, 50 50"
-                            stroke="#4B5563" strokeWidth="4" opacity="0.3"/>
+                            stroke="#4B5563"
+                            strokeWidth="4"
+                            opacity="0.3"
+                        />
                     </svg>
                 </div>
 
-                {/* About Me Content */}
                 <div className="max-w-4xl w-full text-center relative z-10">
-                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">
-                        👋 {t('about.heading')}
-                    </h2>
+                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">👋 {t('about.heading')}</h2>
                     <p className="text-gray-600 mb-8 text-lg animate-fade-in-up max-w-2xl mx-auto">
                         {t('about.intro')}
                     </p>
@@ -109,7 +108,6 @@ function Home() {
                         </figure>
                     </div>
 
-                    {/* Site Purpose Tile */}
                     <div
                         className="tile bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
                         <span className="text-4xl mb-4 block">🌐</span>
@@ -126,51 +124,45 @@ function Home() {
                 className="container mx-auto px-4 py-20 flex justify-center items-start bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden scroll-mt-20"
             >
                 <div className="max-w-4xl w-full text-center">
-                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">
-                        Connect with Me! 📡
-                    </h2>
+                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">Connect with Me! 📡</h2>
                     <p className="text-gray-600 mb-12 text-lg animate-fade-in-up max-w-2xl mx-auto">
                         Drop me a message or follow my journey on social media. Let's create something amazing together!
                         ✨
                     </p>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div
                             className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
                             <span className="text-4xl mb-4 block">✉️</span>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                            <a
-                                href="mailto:zeeshanshaikhonline@gmail.com"
-                                className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
-                            >
+                            <a href="mailto:zeeshanshaikhonline@gmail.com"
+                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
                                 zeeshanshaikhonline@gmail.com
                             </a>
                         </div>
+
                         <div
                             className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
                             <span className="text-4xl mb-4 block">🐙</span>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
-                            <a
-                                href="https://github.com/proteinshaikh"
-                                className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
-                            >
+                            <a href="https://github.com/proteinshaikh"
+                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
                                 github.com/proteinshaikh
                             </a>
                         </div>
+
                         <div
                             className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
                             <span className="text-4xl mb-4 block">💼</span>
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">LinkedIn</h3>
-                            <a
-                                href="https://linkedin.com/in/proteinshaikh"
-                                className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
-                            >
+                            <a href="https://linkedin.com/in/proteinshaikh"
+                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
                                 linkedin.com/in/proteinshaikh
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
-
         </>
     );
 }

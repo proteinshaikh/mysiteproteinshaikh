@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import {Helmet} from 'react-helmet';
 
-function GeogOfBelief() {
+function GeogOfBelief(): JSX.Element {
     return (
         <>
             <Helmet>

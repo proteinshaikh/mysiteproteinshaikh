@@ -1,4 +1,11 @@
-const books = [
+type Book = {
+    title: string;
+    author: string;
+    summary: string;
+    reason: string;
+};
+
+const books: Book[] = [
     {
         title: "The Greatest Show on Earth",
         author: "Richard Dawkins",

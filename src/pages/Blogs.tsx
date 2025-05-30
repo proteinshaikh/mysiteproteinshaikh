@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import {Helmet} from 'react-helmet';
 import ArticleCard from '../components/ArticleCard';
 
-const tech = [
+type Article = {
+    title: string;
+    excerpt: string;
+    link: string;
+};
+
+const tech: Article[] = [
     {
         title: 'The Geography of Belief: Coincidence or Conditioning?',
         excerpt: 'Faith',
@@ -20,15 +26,15 @@ const tech = [
     },
 ];
 
-function Blogs() {
+function Blogs(): JSX.Element {
     return (
         <>
             <Helmet>
                 <title>Opinions | ProteinShaikh</title>
             </Helmet>
             <section
-                className="container mx-auto px-4 py-8 flex justify-center items-start min-h-[80vh] bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-
+                className="container mx-auto px-4 py-8 flex justify-center items-start min-h-[80vh] bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden"
+            >
                 <div className="max-w-4xl w-full text-center">
                     <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">
                         Explore Tech with me! 📝

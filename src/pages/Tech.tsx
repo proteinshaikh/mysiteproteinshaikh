@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import {Helmet} from 'react-helmet';
 import ArticleCard from '../components/ArticleCard';
 
-const tech = [
+interface Article {
+    title: string;
+    excerpt: string;
+    link: string;
+}
+
+const tech: Article[] = [
     {
         title: 'Understanding React Hooks 📚',
         excerpt: 'A deep dive into React Hooks and how they can simplify your code.',
@@ -10,7 +16,7 @@ const tech = [
     },
 ];
 
-function Articles() {
+function Articles(): JSX.Element {
     return (
         <>
             <Helmet>

@@ -18,27 +18,6 @@ h1, h2, h3, h4, h5, h6 {
 a {
   @apply text-primary hover:underline;
 }
-.markdown-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-}
-
-.markdown-table th,
-.markdown-table td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-  text-align: left;
-}
-
-.markdown-table th {
-  background-color: #f3f4f6;
-  font-weight: 600;
-}
-
-.markdown-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
 html {
   scroll-behavior: smooth;
 }

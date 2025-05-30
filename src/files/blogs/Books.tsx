@@ -1,9 +1,16 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import BookCard from '../../components/BookCard'; // adjust path based on actual location
+import React, {JSX} from 'react';
+import {Helmet} from 'react-helmet';
+import BookCard from '../../components/BookCard';
 import books from '../../data/books';
 
-function Books() {
+type Book = {
+    title: string;
+    author: string;
+    summary: string;
+    reason: string;
+};
+
+function Books(): JSX.Element {
     return (
         <>
             <Helmet>
@@ -15,7 +22,7 @@ function Books() {
                     Discover a curated selection of must-read books for 2025.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {books.map((book, index) => (
+                    {books.map((book: Book, index: number) => (
                         <BookCard key={index} {...book} />
                     ))}
                 </div>
