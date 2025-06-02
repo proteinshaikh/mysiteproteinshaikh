@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // or "react" if using older React version
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "module": "esnext",
+    "target": "esnext",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "lib": ["dom", "esnext"]
+  },
+  "include": [
+    "src",
+    "node_modules/vitest/globals.d.ts"
+  ]
+}
