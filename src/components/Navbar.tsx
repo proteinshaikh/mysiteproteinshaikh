@@ -16,6 +16,7 @@ const fitnessArticles: Article[] = [
     {title: 'My Fitness Journey 🏋️‍♂️', link: '/fitness/dev-to-defined'},
     {title: 'Start with Compound Movements 🏋️', link: '/fitness/start-with-compound-movements'},
     {title: 'Track Your Progress 📈', link: '/fitness/track-your-progress'},
+    {title: 'Meal Plan June 2025', link: '/fitness/meal-plan'},
 ];
 
 const techArticles: Article[] = [

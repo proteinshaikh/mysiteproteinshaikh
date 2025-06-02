@@ -24,6 +24,11 @@ const fitnessTips: FitnessTip[] = [
         excerpt: 'Use apps or a journal to record your workouts and gradually increase intensity.',
         link: '/fitness/track-your-progress',
     },
+    {
+        title: 'Meal Plan June 2025',
+        excerpt: 'Meal Plan June 2025.',
+        link: '/fitness/meal-plan',
+    },
 ];
 
 function Fitness(): JSX.Element {

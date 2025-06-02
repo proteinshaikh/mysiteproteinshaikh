@@ -18,6 +18,7 @@ import BuffetLessons from './files/stocks/BuffettInvestmentLessons';
 import DevToDefined from './files/fitness/DevToDefined';
 import StartWithCompoundMovements from './files/fitness/StartWithCompoundMovements';
 import TrackYourProgress from './files/fitness/TrackYourProgress';
+import MealPlan from './files/fitness/MealPlan';
 
 import GeogOfBelief from './files/blogs/GeogOfBelief';
 import MoneyAndRisk from './files/blogs/InterplayOfMoneyAndRisk';
@@ -51,6 +52,7 @@ function App(): JSX.Element {
                         <Route path="/fitness/dev-to-defined" element={<DevToDefined/>}/>
                         <Route path="/fitness/start-with-compound-movements" element={<StartWithCompoundMovements/>}/>
                         <Route path="/fitness/track-your-progress" element={<TrackYourProgress/>}/>
+                        <Route path="/fitness/meal-plan" element={<MealPlan/>}/>
 
                         <Route path="/blogs/geography-of-belief" element={<GeogOfBelief/>}/>
                         <Route path="/blogs/money-and-risk" element={<MoneyAndRisk/>}/>
