@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import { Helmet } from 'react-helmet';
 
-function DevToDefined() {
+const DevToDefined = (): JSX.Element => {
   return (
     <>
       <Helmet>
@@ -30,7 +30,6 @@ function DevToDefined() {
           <li><strong>Cheat Meals:</strong> Once a week — Indian sweets or dark chocolate 🍫</li>
         </ul>
 
-        {/* Image beside text */}
         <div className="flex flex-col md:flex-row items-center gap-6 my-8">
           <div className="md:w-2/3">
             <p>
@@ -51,7 +50,7 @@ function DevToDefined() {
 
         <h2 className="text-3xl font-semibold mt-8 mb-4">🔁 Lessons That Worked for Me</h2>
         <ul className="list-disc list-inside space-y-2">
-          <li><strong>Consistency > Perfection</strong>: You don’t need to be perfect — just consistent.</li>
+          <li><strong>Consistency &gt; Perfection</strong>: You don’t need to be perfect — just consistent.</li>
           <li><strong>Track Everything</strong>: Food, workouts, mood, hydration — the data shows patterns.</li>
           <li><strong>Sleep, Water, Sunlight</strong>: These 3 factors silently drive your energy and discipline.</li>
           <li><strong>Plan Cheat Meals</strong>: Make room for indulgence without guilt.</li>
@@ -82,6 +81,6 @@ function DevToDefined() {
       </section>
     </>
   );
-}
+};
 
 export default DevToDefined;

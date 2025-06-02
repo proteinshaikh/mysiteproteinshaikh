@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import { Helmet } from 'react-helmet';
 
-function StartWithCompoundMovements() {
+const StartWithCompoundMovements = (): JSX.Element => {
   return (
     <>
       <Helmet>
@@ -68,6 +68,6 @@ function StartWithCompoundMovements() {
       </section>
     </>
   );
-}
+};
 
 export default StartWithCompoundMovements;
