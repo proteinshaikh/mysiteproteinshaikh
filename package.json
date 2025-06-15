@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/playfair-display": "^5.2.5",
+    "@heroicons/react": "^2.2.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/react-router-dom": "^5.3.3",

@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef, MouseEvent, ReactNode, JSX} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import LangToggle from '../utils/LangToggle';
+import {CalculatorIcon} from "@heroicons/react/16/solid";
 
 type Article = {
     title: string;
@@ -69,9 +70,10 @@ function Navbar(): JSX.Element {
                 <div className="hidden md:flex items-center space-x-4 relative">
                     <Link
                         to="/calculators"
-                        className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition font-medium"
+                        className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-100 text-blue-700 hover:bg-blue-200 transition font-medium"
                     >
-                        Calculators
+                        <CalculatorIcon className="h-5 w-5 text-blue-700"/>
+                        <span>Health Calculators</span>
                     </Link>
                     <DropdownNavItem title="Tech" baseLink="/tech" articles={techArticles}/>
                     <DropdownNavItem title="Fitness" baseLink="/fitness" articles={fitnessArticles}/>
