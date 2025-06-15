@@ -24,6 +24,7 @@ import GeogOfBelief from './files/blogs/GeogOfBelief';
 import MoneyAndRisk from './files/blogs/InterplayOfMoneyAndRisk';
 import LessonsFromSteveJobs from './files/blogs/LessonsFromSteveJobs';
 import Books from './files/blogs/Books';
+import FitnessCalc from "./pages/FitnessCalc";
 
 function App(): JSX.Element {
     useEffect(() => {
@@ -58,6 +59,8 @@ function App(): JSX.Element {
                         <Route path="/blogs/money-and-risk" element={<MoneyAndRisk/>}/>
                         <Route path="/blogs/steve-jobs" element={<LessonsFromSteveJobs/>}/>
                         <Route path="/blogs/books" element={<Books/>}/>
+
+                        <Route path="/calculators" element={<FitnessCalc />} />
                     </Routes>
                 </main>
                 <Footer/>

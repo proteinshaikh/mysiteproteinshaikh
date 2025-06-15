@@ -67,10 +67,17 @@ function Navbar(): JSX.Element {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-4 relative">
+                    <Link
+                        to="/calculators"
+                        className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition font-medium"
+                    >
+                        Calculators
+                    </Link>
                     <DropdownNavItem title="Tech" baseLink="/tech" articles={techArticles}/>
                     <DropdownNavItem title="Fitness" baseLink="/fitness" articles={fitnessArticles}/>
                     <DropdownNavItem title="Stocks" baseLink="/stocks" articles={stockArticles}/>
                     <DropdownNavItem title="Blogs" baseLink="/blogs" articles={blogsArticles}/>
+
                     <a href="#contact"
                        className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-200 font-medium">
                         Contact
@@ -82,11 +89,15 @@ function Navbar(): JSX.Element {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden bg-white px-4 pb-4 space-y-3 pt-2">
+                    <MobileNavItem to="/calculators" onClick={() => setIsOpen(false)}>
+                        Calculators
+                    </MobileNavItem>
                     <MobileNavItem to="/tech" onClick={() => setIsOpen(false)}>Tech</MobileNavItem>
                     <MobileNavItem to="/fitness" onClick={() => setIsOpen(false)}>Fitness</MobileNavItem>
                     <MobileNavItem to="/stocks" onClick={() => setIsOpen(false)}>Stocks</MobileNavItem>
                     <MobileNavItem to="/blogs" onClick={() => setIsOpen(false)}>Blogs</MobileNavItem>
                     <MobileNavItem to="/contact" onClick={() => setIsOpen(false)}>Contact</MobileNavItem>
+
                     <div className="mt-2">
                         <LangToggle/>
                     </div>
