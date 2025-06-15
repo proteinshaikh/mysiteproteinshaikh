@@ -128,7 +128,7 @@ const FitnessCalculator: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Health Report Generator</title>
+                <title>Health Report Calculator</title>
             </Helmet>
 
             <div className="min-h-screen bg-gray-100">
