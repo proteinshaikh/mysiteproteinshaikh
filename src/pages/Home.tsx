@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 
 /* ── Typewriter ─────────────────────────────────────────── */
-const ROLES = ['Software Developer', 'Powerlifter', 'Long-term Investor', 'Problem Solver'];
+const ROLES = ['Software Engineer', 'Powerlifter', 'Boglehead Investor', 'Problem Solver'];
 
 function Typewriter(): JSX.Element {
     const [index, setIndex] = useState(0);
