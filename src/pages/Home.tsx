@@ -151,26 +151,23 @@ export default function Home(): JSX.Element {
             <Helmet><title>Zeeshan Shaikh - Developer · Lifter · Investor</title></Helmet>
 
             {/* Hero */}
-            <section className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-                <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14 lg:py-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.88 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.65, ease: 'easeOut' }}
-                        className="relative shrink-0"
-                    >
-                        <div className="w-40 h-40 lg:w-52 lg:h-52 rounded-3xl overflow-hidden ring-4 ring-indigo-200 shadow-xl">
-                            <img src={`${process.env.PUBLIC_URL}/fit.jpeg`} alt="Zeeshan Shaikh" className="w-full h-full object-cover"/>
-                        </div>
-                        <span className="absolute -bottom-1.5 -right-1.5 w-5 h-5 bg-emerald-400 rounded-full border-2 border-white shadow-md"/>
-                        <div className="absolute -z-10 -top-4 -left-4 w-full h-full rounded-3xl bg-indigo-100 opacity-60"/>
-                    </motion.div>
-
+            <section className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+                {/* Sketch - free-floating in background, right side */}
+                <div className="absolute right-0 top-0 h-full w-[45%] hidden lg:block pointer-events-none select-none">
+                    <img
+                        src={`${process.env.PUBLIC_URL}/fit.jpeg`}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute bottom-0 right-0 w-full object-contain object-bottom"
+                        style={{ opacity: 0.92, mixBlendMode: 'multiply', maxHeight: '95%' }}
+                    />
+                </div>
+                <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14 lg:py-24 flex flex-col lg:flex-row items-end gap-10 lg:gap-20">
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.65, delay: 0.15, ease: 'easeOut' }}
-                        className="flex-1"
+                        className="flex-1 relative z-10"
                     >
                         <p className="text-indigo-500 text-sm font-semibold tracking-widest uppercase mb-2">Hey there 👋</p>
                         <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">I'm Zeeshan Shaikh</h1>
@@ -178,17 +175,22 @@ export default function Home(): JSX.Element {
 
                         <div className="mt-5 space-y-3 text-gray-600 leading-relaxed text-[15px] max-w-2xl">
                             <p>
-                                I'm a software engineer with a strong grip on{' '}
-                                <span className="text-indigo-600 font-medium">Java, Spring Boot, and cloud-native systems</span>.
-                                I've spent years building scalable microservices, designing APIs, and shipping things that actually work in production — currently based in{' '}
-                                <span className="text-indigo-600 font-medium">Dubai, UAE</span>.
+                                I build things with{' '}
+                                <span className="text-indigo-600 font-medium">Java & Spring Boot</span> by day,
+                                lift heavy weights by evening, and read about the universe somewhere in between.
+                                Based in <span className="text-indigo-600 font-medium">Dubai</span> - but my mind wanders everywhere.
                             </p>
                             <p>
-                                Outside of code, I take my{' '}
-                                <span className="text-indigo-600 font-medium">powerlifting</span> seriously - I dropped 20 kg through disciplined calorie tracking and compound movements, and I haven't looked back. That same obsessive consistency carries into how I approach{' '}
-                                <span className="text-indigo-600 font-medium">long-term investing</span>: patient, research-driven, and never chasing noise.
+                                I lost <span className="text-indigo-600 font-medium">20 kg</span> not through a diet plan
+                                but through curiosity - understanding how the body actually works.
+                                Same energy goes into{' '}
+                                <span className="text-indigo-600 font-medium">investing</span>: slow, intentional, no noise.
                             </p>
-                            <p>I write about tech, fitness, and money on Medium and my blog.</p>
+                            <p>
+                                I'm drawn to patterns - in code, in markets, in people, in art.
+                                I write, I observe, I overthink playlists.
+                                This site is just a small window into all of that.
+                            </p>
                         </div>
 
                         <motion.div
@@ -208,6 +210,8 @@ export default function Home(): JSX.Element {
                             ))}
                         </motion.div>
                     </motion.div>
+
+
                 </div>
             </section>
 
