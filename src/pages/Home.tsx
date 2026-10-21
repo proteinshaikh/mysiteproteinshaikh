@@ -1,170 +1,282 @@
-import React, {JSX} from 'react';
-import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
-import {Helmet} from 'react-helmet';
+import React, { useState, useEffect, useRef, JSX, useCallback } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 
-function Home(): JSX.Element {
-    const {t} = useTranslation();
+/* ── Typewriter ─────────────────────────────────────────── */
+const ROLES = ['Software Developer', 'Powerlifter', 'Long-term Investor', 'Problem Solver'];
+
+function Typewriter(): JSX.Element {
+    const [index, setIndex] = useState(0);
+    const [displayed, setDisplayed] = useState('');
+    const [deleting, setDeleting] = useState(false);
+
+    useEffect(() => {
+        const word = ROLES[index];
+        let t: ReturnType<typeof setTimeout>;
+        if (!deleting && displayed.length < word.length)
+            t = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
+        else if (!deleting && displayed.length === word.length)
+            t = setTimeout(() => setDeleting(true), 1800);
+        else if (deleting && displayed.length > 0)
+            t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
+        else { setDeleting(false); setIndex(i => (i + 1) % ROLES.length); }
+        return () => clearTimeout(t);
+    }, [displayed, deleting, index]);
 
     return (
-        <>
-            <Helmet>
-                <title>Home | ProteinShaikh</title>
-            </Helmet>
-
-            {/* Hero Section */}
-            <section className="bg-background py-20 px-6">
-                <div
-                    className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-                    {/* Profile Image */}
-                    <div className="relative w-full md:w-[45%] flex justify-center">
-                        <div
-                            className="relative w-64 h-64 bg-yellow-300 rounded-full flex items-center justify-center shadow-lg">
-                            <img
-                                src={`${process.env.PUBLIC_URL}/fit.jpeg`}
-                                alt="ProteinShaikh"
-                                className="w-56 h-56 rounded-full object-cover border-4 border-white"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Hero Text */}
-                    <div className="w-full md:w-[55%] text-center md:text-left" data-aos="fade-up">
-                        <h1 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
-                            {t('home.hey')}{' '}
-                            <span className="relative inline-block">
-                <span className="relative z-10">{t('home.friends')}</span>
-                <span
-                    className="absolute left-0 bottom-0 w-full h-1 bg-accent z-0 transform translate-y-1 rotate-1"></span>
-              </span>{' '}
-                            👋
-                        </h1>
-
-                        <p className="text-xl text-gray-700 mb-6 leading-relaxed max-w-xl">
-                            {t('home.intro')}
-                        </p>
-
-                        <div className="space-x-4">
-                            <Link
-                                to="/fitness"
-                                className="px-6 py-2 bg-primary text-white rounded-full shadow hover:bg-primary-dark transition"
-                            >
-                                Explore Fitness
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* About Me Section */}
-            <section
-                className="container mx-auto px-4 py-16 flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
-                    <svg className="w-full h-full object-contain" viewBox="0 0 200 200" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M50 50C70 30, 130 30, 150 50C170 70, 170 130, 150 150C130 170, 70 170, 50 150C30 130, 30 70, 50 50"
-                            stroke="#4B5563"
-                            strokeWidth="4"
-                            opacity="0.3"
-                        />
-                    </svg>
-                </div>
-
-                <div className="max-w-4xl w-full text-center relative z-10">
-                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">👋 {t('about.heading')}</h2>
-                    <p className="text-gray-600 mb-8 text-lg animate-fade-in-up max-w-2xl mx-auto">
-                        {t('about.intro')}
-                    </p>
-                    <p className="text-gray-600 mb-12 text-lg animate-fade-in-up max-w-2xl mx-auto">
-                        {t('about.secondary')}
-                    </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                        {/* Fitness Quote */}
-                        <figure
-                            className="relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                            <blockquote
-                                className="text-gray-600 italic text-lg before:content-['“'] before:text-3xl before:text-gray-400 before:mr-2 after:content-['”'] after:text-3xl after:text-gray-400 after:ml-2">
-                                {t('about.fitnessText')}
-                            </blockquote>
-                            <figcaption className="mt-4 flex items-center justify-center gap-2">
-                                <span className="text-2xl">🏋️</span>
-                                <span className="text-xl font-semibold text-gray-800">{t('about.fitnessTitle')}</span>
-                            </figcaption>
-                        </figure>
-
-                        {/* Finance Quote */}
-                        <figure
-                            className="relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                            <blockquote
-                                className="text-gray-600 italic text-lg before:content-['“'] before:text-3xl before:text-gray-400 before:mr-2 after:content-['”'] after:text-3xl after:text-gray-400 after:ml-2">
-                                {t('about.financeText')}
-                            </blockquote>
-                            <figcaption className="mt-4 flex items-center justify-center gap-2">
-                                <span className="text-2xl">📈</span>
-                                <span className="text-xl font-semibold text-gray-800">{t('about.financeTitle')}</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-
-                    <div
-                        className="tile bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                        <span className="text-4xl mb-4 block">🌐</span>
-                        <h3 className="text-2xl font-semibold text-gray-800 mb-3">{t('about.siteTitle')}</h3>
-                        <p className="text-gray-600 mb-4">{t('about.siteText')}</p>
-                        <p className="text-lg font-semibold text-blue-600">{t('about.closing')}</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <section
-                id="contact"
-                className="container mx-auto px-4 py-20 flex justify-center items-start bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden scroll-mt-20"
-            >
-                <div className="max-w-4xl w-full text-center">
-                    <h2 className="text-4xl font-bold mb-10 text-gray-800 animate-fade-in-down">Connect with Me! 📡</h2>
-                    <p className="text-gray-600 mb-12 text-lg animate-fade-in-up max-w-2xl mx-auto">
-                        Drop me a message or follow my journey on social media. Let's create something amazing together!
-                        ✨
-                    </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div
-                            className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                            <span className="text-4xl mb-4 block">✉️</span>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                            <a href="mailto:zeeshanshaikhonline@gmail.com"
-                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
-                                zeeshanshaikhonline@gmail.com
-                            </a>
-                        </div>
-
-                        <div
-                            className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                            <span className="text-4xl mb-4 block">🐙</span>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
-                            <a href="https://github.com/proteinshaikh"
-                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
-                                github.com/proteinshaikh
-                            </a>
-                        </div>
-
-                        <div
-                            className="tile bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 wobble">
-                            <span className="text-4xl mb-4 block">💼</span>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">LinkedIn</h3>
-                            <a href="https://linkedin.com/in/proteinshaikh"
-                               className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
-                                linkedin.com/in/proteinshaikh
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
+        <span className="text-indigo-500 font-semibold">
+            {displayed}<span className="animate-pulse">|</span>
+        </span>
     );
 }
 
-export default Home;
+/* ── Animated counter ───────────────────────────────────── */
+function Counter({ to, suffix = '' }: { to: number; suffix?: string }): JSX.Element {
+    const ref = useRef<HTMLSpanElement>(null);
+    const inView = useInView(ref, { once: true });
+    const mv = useMotionValue(0);
+    const spring = useSpring(mv, { stiffness: 60, damping: 20 });
+    const [val, setVal] = useState(0);
+    useEffect(() => { if (inView) mv.set(to); }, [inView, to, mv]);
+    useEffect(() => spring.on('change', v => setVal(Math.round(v))), [spring]);
+    return <span ref={ref}>{val}{suffix}</span>;
+}
+
+/* ── FadeIn wrapper ─────────────────────────────────────── */
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }): JSX.Element {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: '-60px' });
+    return (
+        <motion.div ref={ref}
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay, ease: 'easeOut' }}>
+            {children}
+        </motion.div>
+    );
+}
+
+/* ── Skills ─────────────────────────────────────────────── */
+const SKILLS = [
+    { label: 'Java',          color: 'bg-orange-100 text-orange-700 border-orange-200' },
+    { label: 'Spring Boot',   color: 'bg-green-100 text-green-700 border-green-200' },
+    { label: 'React',         color: 'bg-sky-100 text-sky-700 border-sky-200' },
+    { label: 'TypeScript',    color: 'bg-blue-100 text-blue-700 border-blue-200' },
+    { label: 'AWS',           color: 'bg-yellow-100 text-yellow-700 border-yellow-200' },
+    { label: 'Docker',        color: 'bg-cyan-100 text-cyan-700 border-cyan-200' },
+    { label: 'PostgreSQL',    color: 'bg-indigo-100 text-indigo-700 border-indigo-200' },
+    { label: 'Microservices', color: 'bg-purple-100 text-purple-700 border-purple-200' },
+    { label: 'Investing',     color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
+    { label: 'Powerlifting',  color: 'bg-rose-100 text-rose-700 border-rose-200' },
+];
+
+/* ── Social button with hover tooltip ───────────────────── */
+function SocialButton({ href, label, icon, bg, hover }: {
+    href: string; label: string; icon: React.ReactNode; bg: string; hover: string;
+}): JSX.Element {
+    const [copied, setCopied] = useState(false);
+    const copy = useCallback((e: React.MouseEvent) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(href).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1800);
+        });
+    }, [href]);
+
+    return (
+        <div className="relative group">
+            <motion.a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+                className={`w-13 h-13 w-[52px] h-[52px] rounded-2xl flex items-center justify-center shadow-md transition-all text-white ${bg} ${hover}`}
+            >
+                {icon}
+            </motion.a>
+            {/* Tooltip */}
+            <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50
+                            opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 whitespace-nowrap shadow-xl flex flex-col items-center gap-1 min-w-[140px]">
+                    <span className="font-semibold tracking-wide">{label}</span>
+                    <span className="text-gray-300 text-[10px] truncate max-w-[160px]">{href}</span>
+                    <button
+                        onMouseDown={(e) => { e.stopPropagation(); }}
+                        onClick={(e) => { (e as unknown as React.MouseEvent).preventDefault(); copy(e as unknown as React.MouseEvent); }}
+                        className="pointer-events-auto mt-0.5 bg-indigo-500 hover:bg-indigo-400 text-white text-[10px] px-2 py-0.5 rounded-md transition-colors"
+                    >
+                        {copied ? '✓ Copied!' : 'Copy link'}
+                    </button>
+                </div>
+                <div className="w-2 h-2 bg-gray-900 rotate-45 mx-auto -mt-1" />
+            </div>
+        </div>
+    );
+}
+
+/* ── SVG icons ──────────────────────────────────────────── */
+const GithubIcon = ({ className = 'w-5 h-5' }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+    </svg>
+);
+const LinkedinIcon = ({ className = 'w-5 h-5' }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+);
+const MediumIcon = ({ className = 'w-5 h-5' }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+    </svg>
+);
+const BlogIcon = ({ className = 'w-5 h-5' }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+        <path d="M6.5 10.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+    </svg>
+);
+const InstaIcon = ({ className = 'w-5 h-5' }) => (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+);
+
+/* ── Main ───────────────────────────────────────────────── */
+export default function Home(): JSX.Element {
+    return (
+        <>
+            <Helmet><title>Zeeshan Shaikh — Developer · Lifter · Investor</title></Helmet>
+
+            {/* Hero */}
+            <section className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+                <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14 lg:py-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.88 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.65, ease: 'easeOut' }}
+                        className="relative shrink-0"
+                    >
+                        <div className="w-40 h-40 lg:w-52 lg:h-52 rounded-3xl overflow-hidden ring-4 ring-indigo-200 shadow-xl">
+                            <img src={`${process.env.PUBLIC_URL}/fit.jpeg`} alt="Zeeshan Shaikh" className="w-full h-full object-cover"/>
+                        </div>
+                        <span className="absolute -bottom-1.5 -right-1.5 w-5 h-5 bg-emerald-400 rounded-full border-2 border-white shadow-md"/>
+                        <div className="absolute -z-10 -top-4 -left-4 w-full h-full rounded-3xl bg-indigo-100 opacity-60"/>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.65, delay: 0.15, ease: 'easeOut' }}
+                        className="flex-1"
+                    >
+                        <p className="text-indigo-500 text-sm font-semibold tracking-widest uppercase mb-2">Hey there 👋</p>
+                        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">I'm Zeeshan Shaikh</h1>
+                        <p className="text-lg text-gray-500 mt-2 min-h-[1.75rem]"><Typewriter /></p>
+
+                        <div className="mt-5 space-y-3 text-gray-600 leading-relaxed text-[15px] max-w-2xl">
+                            <p>
+                                I'm a backend-focused software engineer with a strong grip on{' '}
+                                <span className="text-indigo-600 font-medium">Java, Spring Boot, and cloud-native systems</span>.
+                                I've spent years building scalable microservices, designing APIs, and shipping things that actually work in production — currently based in{' '}
+                                <span className="text-indigo-600 font-medium">Dubai</span>.
+                            </p>
+                            <p>
+                                Outside of code, I take my{' '}
+                                <span className="text-indigo-600 font-medium">powerlifting</span> seriously — I dropped 20 kg through disciplined calorie tracking and compound movements, and I haven't looked back. That same obsessive consistency carries into how I approach{' '}
+                                <span className="text-indigo-600 font-medium">long-term investing</span>: patient, research-driven, and never chasing noise.
+                            </p>
+                            <p>I write about tech, fitness, and money on Medium. This site is my corner of the internet — no fluff, just the real stuff.</p>
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.45 }}
+                            className="mt-5 flex flex-wrap gap-4"
+                        >
+                            {[
+                                { href: 'https://github.com/proteinshaikh',         label: 'GitHub',    icon: <GithubIcon className="w-6 h-6"/>,   bg: 'bg-gray-900',   hover: 'hover:bg-gray-700' },
+                                { href: 'https://linkedin.com/in/proteinshaikh',    label: 'LinkedIn',  icon: <LinkedinIcon className="w-6 h-6"/>,  bg: 'bg-[#0A66C2]', hover: 'hover:bg-[#004182]' },
+                                { href: 'https://medium.com/@proteinshaikh',        label: 'Medium',    icon: <MediumIcon className="w-6 h-6"/>,    bg: 'bg-black',      hover: 'hover:bg-gray-800' },
+                                { href: 'https://proteinshaikh.blogspot.com/',      label: 'Blog',      icon: <BlogIcon className="w-6 h-6"/>,      bg: 'bg-[#FF5722]',  hover: 'hover:bg-[#e64a19]' },
+                                { href: 'https://www.instagram.com/gkfornerds',    label: 'Instagram', icon: <InstaIcon className="w-6 h-6"/>,     bg: 'bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]', hover: '' },
+                            ].map(({ href, label, icon, bg, hover }) => (
+                                <SocialButton key={href} href={href} label={label} icon={icon} bg={bg} hover={hover} />
+                            ))}
+                        </motion.div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Stats */}
+            <section className="w-full bg-white border-y border-indigo-50">
+                <div className="max-w-6xl mx-auto px-6 lg:px-16 py-12">
+                    <FadeIn>
+                        <div className="grid grid-cols-3 gap-4 lg:gap-8">
+                            {[
+                                { value: 10,   suffix: '+',  label: 'Years coding',  sub: 'Java · Spring · Cloud' },
+                                { value: 20,  suffix: 'kg', label: 'Weight lost',   sub: 'Calorie deficit + lifting' },
+                                { value: 100, suffix: '%',  label: 'Buy & hold forever',    sub: 'Buffett-style investing' },
+                            ].map(({ value, suffix, label, sub }) => (
+                                <div key={label} className="text-center p-4 lg:p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
+                                    <p className="text-3xl lg:text-4xl font-bold text-indigo-600">
+                                        <Counter to={value} suffix={suffix}/>
+                                    </p>
+                                    <p className="text-sm font-semibold text-gray-700 mt-1">{label}</p>
+                                    <p className="text-xs text-gray-400 mt-0.5 hidden sm:block">{sub}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Skills + Currently */}
+            <section className="w-full">
+                <div className="max-w-6xl mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <FadeIn>
+                        <h2 className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-5">What I work with</h2>
+                        <div className="flex flex-wrap gap-2">
+                            {SKILLS.map(({ label, color }) => (
+                                <motion.span key={label}
+                                    whileHover={{ scale: 1.1, y: -2 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className={`px-3 py-1.5 rounded-full text-sm font-medium border cursor-default select-none ${color}`}
+                                >
+                                    {label}
+                                </motion.span>
+                            ))}
+                        </div>
+                    </FadeIn>
+
+                    <FadeIn delay={0.1}>
+                        <h2 className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-5">Currently</h2>
+                        <div className="space-y-2">
+                            {[
+                                { emoji: '💻', text: 'Building backend systems with Java & Spring Boot in Dubai' },
+                                { emoji: '🏋️', text: 'Training 4× a week — squat, bench, deadlift' },
+                                { emoji: '📈', text: 'Holding a concentrated stock portfolio, Buffett-style' },
+                                { emoji: '✍️', text: 'Writing about tech, fitness & money on Medium' },
+                                { emoji: '📚', text: 'Reading: The origin of species by Charles Darwin' },
+                            ].map(({ emoji, text }, i) => (
+                                <motion.div key={i}
+                                    initial={{ opacity: 0, x: -14 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.07, duration: 0.38 }}
+                                    className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-indigo-50 transition-colors group"
+                                >
+                                    <span className="text-base mt-0.5">{emoji}</span>
+                                    <p className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">{text}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+        </>
+    );
+}

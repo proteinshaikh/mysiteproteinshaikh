@@ -8,7 +8,7 @@ module.exports = {
                 warning: "#E6A23C",
                 danger: "#F56C6C",
                 info: "#909399",
-                background: "#F9F6F3",    // Soft background
+                background: "#f8fbff",    // Sky-tinted white
                 foreground: "#1B1624",    // Text
                 accent: "#5DCDF1",        // Highlight
             },

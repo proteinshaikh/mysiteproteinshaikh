@@ -1,23 +1,18 @@
-@import "@fontsource/playfair-display";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply font-base text-foreground bg-background;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  background-color: #fafafa;
+  color: #111827;
   -webkit-font-smoothing: antialiased;
-  overflow-wrap: break-word;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-heading text-foreground;
-}
-
-a {
-  @apply text-primary hover:underline;
-}
 html {
   scroll-behavior: smooth;
 }

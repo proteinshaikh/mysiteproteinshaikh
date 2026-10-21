@@ -1,40 +1,64 @@
-import React, {JSX} from 'react';
+import React, { JSX } from 'react';
+import { motion } from 'framer-motion';
 
 function Footer(): JSX.Element {
-    const scrollToTop = (): void => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-
     return (
-        <footer className="bg-gradient-to-r from-blue-50 to-purple-100 shadow-inner mt-12">
-            <div className="container mx-auto px-4 py-10 text-center">
+        <footer className="w-full border-t border-indigo-100 bg-white">
+            <div className="max-w-6xl mx-auto px-6 lg:px-16 py-8">
 
-                {/* Logo and Name */}
-                <div className="flex justify-center items-center gap-3 mb-4">
-                    <img
-                        src={`${process.env.PUBLIC_URL}/logo-gym.svg`}
-                        alt="Logo"
-                        className="h-10 w-10"
-                    />
-                    <span className="text-2xl font-bold text-gray-800">ProteinShaikh</span>
+                {/* Contact row */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                    <div className="flex flex-col gap-3">
+                        <p className="text-sm font-semibold text-gray-700">Zeeshan Shaikh</p>
+                        <p className="text-xs text-gray-400 -mt-2">Software Developer · Dubai, UAE</p>
+
+                        <motion.a
+                            href={`https://mail.google.com/mail/?view=cm&to=zeeshanshaikhonline@gmail.com&su=Enquiry%20%2F%20Opportunity&body=Hi%20Zeeshan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20regarding%3A%0A%0A%5B%20%5D%20Job%20%2F%20Career%20Opportunity%0A%5B%20%5D%20Consulting%20%2F%20Freelance%20Work%0A%5B%20%5D%20Collaboration%0A%5B%20%5D%20Other%0A%0A---%0AName%3A%20%0ACompany%3A%20%0ADetails%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.%0A%0ARegards%2C%0A%5BYour%20Name%5D`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ y: -1 }}
+                            className="flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors group"
+                        >
+                            <span className="w-7 h-7 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center group-hover:bg-indigo-100 transition-colors">
+                                <svg className="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </span>
+                            zeeshanshaikhonline@gmail.com
+                        </motion.a>
+
+                        {/* Phone */}
+                        <motion.a
+                            href="tel:+971557436491"
+                            whileHover={{ y: -1 }}
+                            className="flex items-center gap-2 text-sm text-gray-500 hover:text-indigo-600 transition-colors group"
+                        >
+                            <span className="w-7 h-7 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center group-hover:bg-indigo-100 transition-colors">
+                                <svg className="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </span>
+                            <span className="mr-0.5">🇦🇪</span>
+                            +971 55 743 6491
+                        </motion.a>
+                    </div>
+
+                    <motion.button
+                        whileHover={{ y: -2 }}
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="text-xs text-indigo-400 hover:text-indigo-600 transition-colors font-medium"
+                    >
+                        ↑ Back to top
+                    </motion.button>
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-gray-200 my-4 w-2/3 mx-auto"/>
+                <div className="h-px bg-gradient-to-r from-transparent via-indigo-100 to-transparent mb-4" />
 
-                {/* Footer Text */}
-                <p className="text-sm text-gray-600 mb-1">
-                    &copy; {new Date().getFullYear()} ProteinShaikh. Made with ❤️ and ☕ in Dubai.
+                {/* Bottom */}
+                <p className="text-xs text-gray-400 text-center">
+                    &copy; {new Date().getFullYear()} Zeeshan Shaikh · Dubai, UAE
                 </p>
-                <p className="text-xs text-gray-400">All rights reserved.</p>
-
-                {/* Back to Top Button */}
-                <button
-                    onClick={scrollToTop}
-                    className="inline-block mt-6 px-5 py-2 bg-primary text-white rounded-full shadow hover:bg-primary-dark transition"
-                >
-                    ↑ Back to Top
-                </button>
             </div>
         </footer>
     );
