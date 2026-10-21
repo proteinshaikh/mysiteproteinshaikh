@@ -178,7 +178,7 @@ export default function Home(): JSX.Element {
 
                         <div className="mt-5 space-y-3 text-gray-600 leading-relaxed text-[15px] max-w-2xl">
                             <p>
-                                I'm a backend-focused software engineer with a strong grip on{' '}
+                                I'm a software engineer with a strong grip on{' '}
                                 <span className="text-indigo-600 font-medium">Java, Spring Boot, and cloud-native systems</span>.
                                 I've spent years building scalable microservices, designing APIs, and shipping things that actually work in production — currently based in{' '}
                                 <span className="text-indigo-600 font-medium">Dubai, UAE</span>.
