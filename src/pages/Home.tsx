@@ -71,8 +71,8 @@ const SKILLS = [
 ];
 
 /* ── Social button with hover tooltip ───────────────────── */
-function SocialButton({ href, label, icon, bg, hover }: {
-    href: string; label: string; icon: React.ReactNode; bg: string; hover: string;
+function SocialButton({ href, label, icon, color }: {
+    href: string; label: string; icon: React.ReactNode; color: string;
 }): JSX.Element {
     const [copied, setCopied] = useState(false);
     const copy = useCallback((e: React.MouseEvent) => {
@@ -89,11 +89,12 @@ function SocialButton({ href, label, icon, bg, hover }: {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -4 }}
+                whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-13 h-13 w-[52px] h-[52px] rounded-2xl flex items-center justify-center shadow-md transition-all text-white ${bg} ${hover}`}
+                className={`flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-white border border-indigo-100 shadow-md hover:shadow-indigo-200 hover:border-indigo-300 transition-all ${color}`}
             >
                 {icon}
+                <span className="text-sm font-semibold">{label}</span>
             </motion.a>
             {/* Tooltip */}
             <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50
@@ -147,7 +148,7 @@ const InstaIcon = ({ className = 'w-5 h-5' }) => (
 export default function Home(): JSX.Element {
     return (
         <>
-            <Helmet><title>Zeeshan Shaikh — Developer · Lifter · Investor</title></Helmet>
+            <Helmet><title>Zeeshan Shaikh - Developer · Lifter · Investor</title></Helmet>
 
             {/* Hero */}
             <section className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50">
@@ -180,14 +181,14 @@ export default function Home(): JSX.Element {
                                 I'm a backend-focused software engineer with a strong grip on{' '}
                                 <span className="text-indigo-600 font-medium">Java, Spring Boot, and cloud-native systems</span>.
                                 I've spent years building scalable microservices, designing APIs, and shipping things that actually work in production — currently based in{' '}
-                                <span className="text-indigo-600 font-medium">Dubai</span>.
+                                <span className="text-indigo-600 font-medium">Dubai, UAE</span>.
                             </p>
                             <p>
                                 Outside of code, I take my{' '}
-                                <span className="text-indigo-600 font-medium">powerlifting</span> seriously — I dropped 20 kg through disciplined calorie tracking and compound movements, and I haven't looked back. That same obsessive consistency carries into how I approach{' '}
+                                <span className="text-indigo-600 font-medium">powerlifting</span> seriously - I dropped 20 kg through disciplined calorie tracking and compound movements, and I haven't looked back. That same obsessive consistency carries into how I approach{' '}
                                 <span className="text-indigo-600 font-medium">long-term investing</span>: patient, research-driven, and never chasing noise.
                             </p>
-                            <p>I write about tech, fitness, and money on Medium. This site is my corner of the internet — no fluff, just the real stuff.</p>
+                            <p>I write about tech, fitness, and money on Medium and my blog.</p>
                         </div>
 
                         <motion.div
@@ -197,13 +198,13 @@ export default function Home(): JSX.Element {
                             className="mt-5 flex flex-wrap gap-4"
                         >
                             {[
-                                { href: 'https://github.com/proteinshaikh',         label: 'GitHub',    icon: <GithubIcon className="w-6 h-6"/>,   bg: 'bg-gray-900',   hover: 'hover:bg-gray-700' },
-                                { href: 'https://linkedin.com/in/proteinshaikh',    label: 'LinkedIn',  icon: <LinkedinIcon className="w-6 h-6"/>,  bg: 'bg-[#0A66C2]', hover: 'hover:bg-[#004182]' },
-                                { href: 'https://medium.com/@proteinshaikh',        label: 'Medium',    icon: <MediumIcon className="w-6 h-6"/>,    bg: 'bg-black',      hover: 'hover:bg-gray-800' },
-                                { href: 'https://proteinshaikh.blogspot.com/',      label: 'Blog',      icon: <BlogIcon className="w-6 h-6"/>,      bg: 'bg-[#FF5722]',  hover: 'hover:bg-[#e64a19]' },
-                                { href: 'https://www.instagram.com/gkfornerds',    label: 'Instagram', icon: <InstaIcon className="w-6 h-6"/>,     bg: 'bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]', hover: '' },
-                            ].map(({ href, label, icon, bg, hover }) => (
-                                <SocialButton key={href} href={href} label={label} icon={icon} bg={bg} hover={hover} />
+                                { href: 'https://github.com/proteinshaikh',         label: 'GitHub',    icon: <GithubIcon className="w-6 h-6"/>,   color: 'text-gray-800' },
+                                { href: 'https://linkedin.com/in/proteinshaikh',    label: 'LinkedIn',  icon: <LinkedinIcon className="w-6 h-6"/>,  color: 'text-[#0A66C2]' },
+                                { href: 'https://medium.com/@proteinshaikh',        label: 'Medium',    icon: <MediumIcon className="w-6 h-6"/>,    color: 'text-gray-900' },
+                                { href: 'https://proteinshaikh.blogspot.com/',      label: 'Blog',      icon: <BlogIcon className="w-6 h-6"/>,      color: 'text-[#FF5722]' },
+                                { href: 'https://www.instagram.com/gkfornerds',    label: 'Instagram', icon: <InstaIcon className="w-6 h-6"/>,     color: 'text-[#C13584]' },
+                            ].map(({ href, label, icon, color }) => (
+                                <SocialButton key={href} href={href} label={label} icon={icon} color={color} />
                             ))}
                         </motion.div>
                     </motion.div>
@@ -256,7 +257,7 @@ export default function Home(): JSX.Element {
                         <div className="space-y-2">
                             {[
                                 { emoji: '💻', text: 'Building backend systems with Java & Spring Boot in Dubai' },
-                                { emoji: '🏋️', text: 'Training 4× a week — squat, bench, deadlift' },
+                                { emoji: '🏋️', text: 'Training 4× a week - squat, bench, deadlift' },
                                 { emoji: '📈', text: 'Holding a concentrated stock portfolio, Buffett-style' },
                                 { emoji: '✍️', text: 'Writing about tech, fitness & money on Medium' },
                                 { emoji: '📚', text: 'Reading: The origin of species by Charles Darwin' },
