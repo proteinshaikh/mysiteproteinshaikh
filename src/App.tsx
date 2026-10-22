@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProfilePage from './pages/ProfilePage';
 import BooksPage from './pages/BooksPage';
+import ResumePage from './pages/ResumePage';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 function App(): JSX.Element {
@@ -24,6 +25,7 @@ function App(): JSX.Element {
                         }
                     />
                     <Route path="/books" element={<BooksPage/>}/>
+                    <Route path="/resume" element={<ResumePage/>}/>
                 </Routes>
             </main>
             <Footer/>

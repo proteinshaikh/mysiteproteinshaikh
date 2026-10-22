@@ -76,6 +76,16 @@ function Navbar(): JSX.Element {
 
                     {/* Right */}
                     <div className="flex items-center gap-2 text-sm">
+                        {/* Resume button */}
+                        <Link to="/resume">
+                            <motion.span
+                                whileHover={{ backgroundColor: '#eef2ff' }}
+                                className="block px-3 py-1.5 rounded-lg text-gray-500 hover:text-indigo-600 transition-colors font-medium cursor-pointer text-sm"
+                            >
+                                📄 Resume
+                            </motion.span>
+                        </Link>
+
                         {/* Books button */}
                         <Link to="/books">
                             <motion.span
