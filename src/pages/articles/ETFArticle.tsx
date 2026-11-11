@@ -215,7 +215,7 @@ export default function ETFArticle(): JSX.Element {
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                                 <XAxis dataKey="label" tick={{ fontSize: 11 }} />
                                 <YAxis tickFormatter={v => `${v}%`} tick={{ fontSize: 11 }} domain={[0, 35]} />
-                                <Tooltip formatter={(v: number) => `${v}%`} />
+                                <Tooltip formatter={(v) => `${Number(v)}%`} />
                                 <Bar dataKey="rate" radius={[6, 6, 0, 0]}>
                                     {withholdingData.map((d, i) => <Cell key={i} fill={d.fill} />)}
                                 </Bar>
@@ -242,7 +242,7 @@ export default function ETFArticle(): JSX.Element {
                                     paddingAngle={3} animationBegin={0} animationDuration={900}>
                                     {vwraAllocation.map((d, i) => <Cell key={i} fill={d.color} />)}
                                 </Pie>
-                                <Tooltip formatter={(v: number) => `${v}%`} />
+                                <Tooltip formatter={(v) => `${Number(v)}%`} />
                                 <Legend iconType="circle" iconSize={10} wrapperStyle={{ fontSize: 12 }} />
                             </PieChart>
                         </ResponsiveContainer>
@@ -275,7 +275,7 @@ export default function ETFArticle(): JSX.Element {
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                                 <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                                 <YAxis tickFormatter={v => `${v}%`} tick={{ fontSize: 11 }} domain={[0, 0.25]} />
-                                <Tooltip formatter={(v: number) => `${v}%`} />
+                                <Tooltip formatter={(v) => `${Number(v)}%`} />
                                 <Bar dataKey="ter" radius={[6, 6, 0, 0]}>
                                     {terData.map((d, i) => <Cell key={i} fill={d.fill} />)}
                                 </Bar>
@@ -306,7 +306,7 @@ export default function ETFArticle(): JSX.Element {
                                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                                 <XAxis dataKey="year" tick={{ fontSize: 11 }} />
                                 <YAxis tickFormatter={formatUSD} tick={{ fontSize: 11 }} />
-                                <Tooltip formatter={(v: number) => formatUSD(v)} />
+                                <Tooltip formatter={(v) => formatUSD(Number(v))} />
                                 <Legend iconType="circle" iconSize={10} wrapperStyle={{ fontSize: 12 }} />
                                 <Area type="monotone" dataKey="invested"  name="Total Invested"  stroke="#ef4444" fill="url(#investedGrad)"  strokeWidth={2} animationDuration={1200} />
                                 <Area type="monotone" dataKey="portfolio" name="Portfolio Value" stroke="#1d4ed8" fill="url(#portfolioGrad)" strokeWidth={2.5} animationDuration={1400} />

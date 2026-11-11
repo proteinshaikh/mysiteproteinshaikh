@@ -133,8 +133,7 @@ export default function Home(): JSX.Element {
                             <p className="text-lg text-gray-400 mt-3 min-h-[1.75rem]"><Typewriter /></p>
 
                             <p className="mt-4 text-gray-500 text-[15px] leading-relaxed max-w-lg lg:mx-0 mx-auto">
-                                I build backend systems, lift heavy, read about the universe, and invest like I'll live forever.
-                                Drawn to patterns — in code, markets, people, and art.
+                                I recognize patterns and connect the dots.
                             </p>
 
                             {/* Social icons row — icon only, clean */}
