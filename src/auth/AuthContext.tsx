@@ -7,6 +7,7 @@ interface AuthContextType {
     user: string | null;
     token: string | null;
     login: (email: string, password: string) => Promise<void>;
+    loginWithGoogle: (email: string, name: string) => void;
     logout: () => void;
 }
 
@@ -28,6 +29,15 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
         localStorage.setItem('user', data.email);
     };
 
+    const loginWithGoogle = (email: string, name: string) => {
+        const fakeToken = `google_${Date.now()}`;
+        setToken(fakeToken);
+        setUser(email);
+        localStorage.setItem('token', fakeToken);
+        localStorage.setItem('user', email);
+        localStorage.setItem('userName', name);
+    };
+
     const logout = () => {
         setToken(null);
         setUser(null);
@@ -42,7 +52,7 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
     }, [token]);
 
     return (
-        <AuthContext.Provider value={{user, token, login, logout}}>
+        <AuthContext.Provider value={{user, token, login, loginWithGoogle, logout}}>
             {children}
         </AuthContext.Provider>
     );

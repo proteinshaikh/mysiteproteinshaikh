@@ -15,10 +15,10 @@ function BookCard({ book, index }: { book: Book; index: number }): JSX.Element {
             transition={{ duration: 0.25, delay: index * 0.04 }}
             whileHover={{ y: -3 }}
             onClick={() => setOpen(o => !o)}
-            className="cursor-pointer bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
+            className="cursor-pointer bg-white border t-border-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:t-border-300 transition-all"
         >
             <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-16 rounded-lg bg-gradient-to-b from-indigo-400 to-purple-500 flex items-center justify-center text-2xl shadow-sm">
+                <div className="shrink-0 w-12 h-16 rounded-lg flex items-center justify-center text-2xl shadow-sm" style={{ background: 'linear-gradient(to bottom, var(--c-400), var(--c-700))' }}>
                     {book.cover}
                 </div>
 
@@ -41,7 +41,7 @@ function BookCard({ book, index }: { book: Book; index: number }): JSX.Element {
                                 className="overflow-hidden"
                             >
                                 <p className="text-xs text-gray-500 mt-3 leading-relaxed">{book.summary}</p>
-                                <p className="text-xs text-indigo-500 mt-2 font-medium">💡 {book.reason}</p>
+                                <p className="text-xs t-text-500 mt-2 font-medium">💡 {book.reason}</p>
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -72,10 +72,10 @@ export default function BooksPage(): JSX.Element {
             <Helmet><title>Bookshelf · Zeeshan Shaikh</title></Helmet>
 
             {/* Header */}
-            <div className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 border-b border-indigo-100">
+            <div className="w-full t-hero-grad border-b t-border-100">
                 <div className="max-w-6xl mx-auto px-6 lg:px-16 py-14">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
-                        <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-2">Bookshelf</p>
+                        <p className="text-xs font-semibold t-text-400 uppercase tracking-widest mb-2">Bookshelf</p>
                         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">What I read</h1>
                         <p className="text-gray-500 mt-2 text-sm max-w-xl">
                             Books are how I think. Across science, history, money, and the occasional story that breaks something open.
@@ -100,8 +100,8 @@ export default function BooksPage(): JSX.Element {
                         onClick={() => setActiveCategory('all')}
                         className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all border ${
                             activeCategory === 'all'
-                                ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                                : 'bg-white text-gray-500 border-gray-200 hover:border-indigo-300 hover:text-indigo-600'
+                                ? 't-btn border-transparent shadow-sm'
+                                : 'bg-white text-gray-500 border-gray-200 hover:t-border-300 hover:t-text-600'
                         }`}
                     >
                         All ({books.length})
@@ -114,8 +114,8 @@ export default function BooksPage(): JSX.Element {
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all border ${
                                     activeCategory === cat
-                                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                                        : 'bg-white text-gray-500 border-gray-200 hover:border-indigo-300 hover:text-indigo-600'
+                                        ? 't-btn border-transparent shadow-sm'
+                                        : 'bg-white text-gray-500 border-gray-200 hover:t-border-300 hover:t-text-600'
                                 }`}
                             >
                                 {CATEGORY_META[cat].emoji} {cat} ({count})

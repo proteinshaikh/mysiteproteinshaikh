@@ -4,6 +4,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Theme variables ─────────────────────────────────────── */
+:root, [data-theme="american"] {
+  --c-50:  #eff6ff;
+  --c-100: #dbeafe;
+  --c-200: #bfdbfe;
+  --c-300: #93c5fd;
+  --c-400: #60a5fa;
+  --c-500: #3b82f6;
+  --c-600: #2563eb;
+  --c-700: #1d4ed8;
+  --c-grad-from: #eff6ff;
+  --c-grad-to:   #fef2f2;
+  --c-text:      #2563eb;
+  --c-badge-bg:  #eff6ff;
+  --c-badge-border: #bfdbfe;
+}
+
+/* ── Theme utility classes ───────────────────────────────── */
+.t-bg-50  { background-color: var(--c-50); }
+.t-bg-100 { background-color: var(--c-100); }
+.t-bg-200 { background-color: var(--c-200); }
+.t-border-100 { border-color: var(--c-100); }
+.t-border-200 { border-color: var(--c-200); }
+.t-border-300 { border-color: var(--c-300); }
+.t-text-400 { color: var(--c-400); }
+.t-text-500 { color: var(--c-500); }
+.t-text-600 { color: var(--c-600); }
+.t-text-700 { color: var(--c-700); }
+.t-ring-200 { --tw-ring-color: var(--c-200); }
+.t-shadow-200 { --tw-shadow-color: var(--c-200); }
+
+.t-btn {
+  background-color: #2563eb;
+  color: white;
+}
+.t-btn:hover { background-color: #1d4ed8; }
+
+.t-hero-grad {
+  background: linear-gradient(135deg, #eff6ff 0%, white 50%, #fef2f2 100%);
+}
+
+.t-badge {
+  background-color: var(--c-badge-bg);
+  border-color: var(--c-badge-border);
+  color: var(--c-text);
+}
+
 body {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
   background-color: #fafafa;

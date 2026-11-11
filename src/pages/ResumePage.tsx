@@ -11,7 +11,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
             transition={{ duration: 0.45 }}
             className="mb-10"
         >
-            <h2 className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-4">{title}</h2>
+            <h2 className="text-xs font-semibold t-text-400 uppercase tracking-widest mb-4">{title}</h2>
             {children}
         </motion.section>
     );
@@ -21,17 +21,17 @@ function Job({ role, company, period, points }: {
     role: string; company: string; period: string; points: string[];
 }): JSX.Element {
     return (
-        <div className="relative pl-5 mb-7 last:mb-0 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-indigo-100">
-            <span className="absolute left-[-4px] top-[7px] w-2 h-2 rounded-full bg-indigo-400 ring-2 ring-white" />
+        <div className="relative pl-5 mb-7 last:mb-0 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:t-bg-100">
+            <span className="absolute left-[-4px] top-[7px] w-2 h-2 rounded-full t-bg-200 ring-2 ring-white" />
             <div className="flex flex-wrap items-baseline justify-between gap-1 mb-1">
                 <p className="text-sm font-bold text-gray-900">{role}</p>
                 <span className="text-xs text-gray-400">{period}</span>
             </div>
-            <p className="text-xs text-indigo-500 font-medium mb-2">{company}</p>
+            <p className="text-xs t-text-500 font-medium mb-2">{company}</p>
             <ul className="space-y-1">
                 {points.map((p, i) => (
                     <li key={i} className="text-sm text-gray-600 flex gap-2">
-                        <span className="text-indigo-300 mt-0.5 shrink-0">›</span>
+                        <span className="t-text-300 mt-0.5 shrink-0">›</span>
                         {p}
                     </li>
                 ))}
@@ -42,7 +42,7 @@ function Job({ role, company, period, points }: {
 
 function Chip({ label }: { label: string }): JSX.Element {
     return (
-        <span className="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-medium">
+        <span className="px-3 py-1 rounded-full t-bg-50 t-border-100 border t-text-600 text-xs font-medium">
             {label}
         </span>
     );
@@ -54,18 +54,18 @@ export default function ResumePage(): JSX.Element {
             <Helmet><title>Resume · Zeeshan Shaikh</title></Helmet>
 
             {/* Header */}
-            <div className="w-full bg-gradient-to-br from-indigo-50 via-white to-purple-50 border-b border-indigo-100">
+            <div className="w-full t-hero-grad border-b t-border-100">
                 <div className="max-w-4xl mx-auto px-6 lg:px-16 py-14">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
-                        <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-2">Resume</p>
+                        <p className="text-xs font-semibold t-text-400 uppercase tracking-widest mb-2">Resume</p>
                         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">Zeeshan Shaikh</h1>
                         <p className="text-gray-500 mt-1 text-sm">Senior Software Developer · Java · Spring Boot · Microservices · Banking & FinTech</p>
                         <div className="flex flex-wrap gap-4 mt-4 text-xs text-gray-500">
                             <span>📍 Dubai, UAE</span>
-                            <a href="tel:+971557436491" className="hover:text-indigo-600 transition-colors">📞 +971 55 743 6491</a>
-                            <a href="mailto:ershaikhzeeshan@gmail.com" className="hover:text-indigo-600 transition-colors">✉️ ershaikhzeeshan@gmail.com</a>
-                            <a href="https://github.com/proteinshaikh" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors">🐙 github.com/proteinshaikh</a>
-                            <a href="https://linkedin.com/in/proteinshaikh" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-600 transition-colors">💼 linkedin.com/in/proteinshaikh</a>
+                            <a href="tel:+971557436491" className="hover:t-text-600 transition-colors">📞 +971 55 743 6491</a>
+                            <a href="mailto:ershaikhzeeshan@gmail.com" className="hover:t-text-600 transition-colors">✉️ ershaikhzeeshan@gmail.com</a>
+                            <a href="https://github.com/proteinshaikh" target="_blank" rel="noopener noreferrer" className="hover:t-text-600 transition-colors">🐙 github.com/proteinshaikh</a>
+                            <a href="https://linkedin.com/in/proteinshaikh" target="_blank" rel="noopener noreferrer" className="hover:t-text-600 transition-colors">💼 linkedin.com/in/proteinshaikh</a>
                         </div>
                     </motion.div>
                 </div>
@@ -165,7 +165,7 @@ export default function ResumePage(): JSX.Element {
                         <div className="flex flex-wrap items-baseline justify-between gap-1">
                             <div>
                                 <p className="text-sm font-bold text-gray-900">Bachelor of Engineering</p>
-                                <p className="text-xs text-indigo-500 font-medium">University of Mumbai, Mumbai</p>
+                                <p className="text-xs t-text-500 font-medium">University of Mumbai, Mumbai</p>
                             </div>
                             <span className="text-xs text-gray-400">2012 – 2016</span>
                         </div>
