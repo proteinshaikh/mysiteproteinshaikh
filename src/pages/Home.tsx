@@ -242,24 +242,24 @@ export default function Home(): JSX.Element {
                         </div>
                     </FadeIn>
 
-                    <FadeIn delay={0.04} className="md:col-span-2 lg:col-span-3 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-900 rounded-3xl border border-slate-800 p-6 shadow-sm text-white">
+                    <FadeIn delay={0.04} className="md:col-span-2 lg:col-span-3 t-hero-grad rounded-3xl border t-border-100 p-6 shadow-sm">
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                             <div>
-                                <p className="text-xs font-semibold text-cyan-300 uppercase tracking-widest mb-3">AI learning map · 9 months</p>
-                                <h3 className="text-xl font-bold leading-snug mb-2">
+                                <p className="text-xs font-semibold t-text-600 uppercase tracking-widest mb-3">AI learning map · 9 months</p>
+                                <h3 className="text-xl font-bold leading-snug mb-2 text-gray-900">
                                     From senior backend developer to Applied AI Engineer
                                 </h3>
-                                <p className="text-sm text-slate-300 max-w-2xl">
+                                <p className="text-sm text-gray-500 max-w-2xl">
                                     A practical, 5-hours-a-week roadmap through LLM engineering, RAG, agents and production AI—with projects built for an enterprise engineering background.
                                 </p>
                                 <div className="flex flex-wrap items-center gap-2 mt-4">
-                                    <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-cyan-200 border border-white/10">195 focused hours</span>
-                                    <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-slate-200 border border-white/10">6 hands-on phases</span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs font-semibold t-bg-100 t-text-700 border t-border-200">195 focused hours</span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs font-semibold t-bg-100 t-text-700 border t-border-200">6 hands-on phases</span>
                                 </div>
                             </div>
                             <Link to="/ai-roadmap" className="shrink-0">
                                 <motion.span whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                                    className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-slate-950 rounded-xl text-sm font-bold cursor-pointer transition-colors">
+                                    className="inline-flex items-center gap-1.5 px-5 py-2.5 t-btn rounded-xl text-sm font-bold cursor-pointer transition-colors">
                                     Explore roadmap →
                                 </motion.span>
                             </Link>

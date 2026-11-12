@@ -249,19 +249,17 @@ export default function AIRoadmapPage(): JSX.Element {
                 <meta name="description" content="A practical 9-month AI Engineer learning roadmap for an experienced backend developer: LLMs, RAG, agents and production AI." />
             </Helmet>
 
-            <header className="relative overflow-hidden border-b border-slate-800 bg-slate-950 text-white">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-indigo-950" />
-                <div className="absolute -right-24 -top-32 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl" />
-                <div className="relative mx-auto max-w-5xl px-6 py-14 lg:px-12 lg:py-20">
-                    <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition-colors hover:text-white">
+            <header className="t-hero-grad border-b border-gray-100">
+                <div className="mx-auto max-w-5xl px-6 py-14 lg:px-12 lg:py-20">
+                    <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:t-text-600">
                         <span aria-hidden="true">←</span> Back to home
                     </Link>
                     <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                        <p className="mt-10 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">A personalized learning map</p>
-                        <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-                            Your path to becoming an <span className="text-cyan-300">AI Engineer</span>
+                        <p className="mt-10 text-xs font-bold uppercase tracking-[0.2em] t-text-600">A personalized learning map</p>
+                        <h1 className="mt-3 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl">
+                            Your path to becoming an <span className="t-text-600">AI Engineer</span>
                         </h1>
-                        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                        <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
                             A focused transition from senior backend developer to Applied AI Engineer—built around the experience you already have, not a return to programming basics.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-3">
@@ -271,14 +269,14 @@ export default function AIRoadmapPage(): JSX.Element {
                                 ['5 hrs/week', 'sustainable pace'],
                                 ['45 weeks', 'learn and build'],
                             ].map(([value, label]) => (
-                                <div key={label} className="min-w-[130px] rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
-                                    <p className="text-xl font-bold text-white">{value}</p>
-                                    <p className="text-xs text-slate-400">{label}</p>
+                                <div key={label} className="min-w-[130px] rounded-2xl border t-border-100 bg-white px-4 py-3 shadow-sm">
+                                    <p className="text-xl font-bold t-text-700">{value}</p>
+                                    <p className="text-xs text-gray-500">{label}</p>
                                 </div>
                             ))}
                         </div>
-                        <p className="mt-8 max-w-2xl border-l-2 border-cyan-400 pl-4 text-sm leading-relaxed text-slate-300">
-                            <strong className="text-white">Target outcome:</strong> independently design, develop, test and deploy AI-powered enterprise applications using Java, Python, LLMs, RAG and AI agents.
+                        <p className="mt-8 max-w-2xl border-l-2 t-border-300 pl-4 text-sm leading-relaxed text-gray-600">
+                            <strong className="text-gray-900">Target outcome:</strong> independently design, develop, test and deploy AI-powered enterprise applications using Java, Python, LLMs, RAG and AI agents.
                         </p>
                     </motion.div>
                 </div>
@@ -313,12 +311,12 @@ export default function AIRoadmapPage(): JSX.Element {
                             </p>
                             <div className="mt-5 flex h-2.5 overflow-hidden rounded-full bg-gray-100" aria-label="Learning time distribution">
                                 <div className="w-[30%] bg-blue-500" title="30% AI concepts" />
-                                <div className="w-1/2 bg-cyan-500" title="50% hands-on engineering" />
+                                <div className="w-1/2 bg-red-400" title="50% hands-on engineering" />
                                 <div className="w-1/5 bg-indigo-500" title="20% architecture and production" />
                             </div>
                             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-500">
                                 <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-blue-500" />30% AI concepts</span>
-                                <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-cyan-500" />50% hands-on engineering</span>
+                                <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-red-400" />50% hands-on engineering</span>
                                 <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-indigo-500" />20% architecture and production</span>
                             </div>
                         </div>
@@ -403,7 +401,7 @@ export default function AIRoadmapPage(): JSX.Element {
                     <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900">The architecture you’ll learn to design</h2>
                     <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">Know why each component exists, when it is needed and what happens when it fails. That’s the difference between calling an AI API and engineering an AI system.</p>
                     <div className="mt-5 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-                        <div className="grid grid-cols-[minmax(120px,0.7fr)_1.3fr] bg-slate-900 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white">
+                        <div className="grid grid-cols-[minmax(120px,0.7fr)_1.3fr] t-btn px-5 py-3 text-xs font-bold uppercase tracking-wider">
                             <span>Layer</span><span>Responsibility</span>
                         </div>
                         {[
@@ -468,7 +466,7 @@ export default function AIRoadmapPage(): JSX.Element {
                 </section>
 
                 <section id="careers" className="mt-16 scroll-mt-32">
-                    <div className="grid gap-6 rounded-3xl bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-6 sm:p-8 lg:grid-cols-[1fr_1fr]">
+                    <div className="grid gap-6 rounded-3xl t-hero-grad border t-border-100 p-6 sm:p-8 lg:grid-cols-[1fr_1fr]">
                         <div>
                             <p className="text-xs font-bold uppercase tracking-widest text-blue-600">Where it can take you</p>
                             <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900">Career paths to explore</h2>
@@ -487,38 +485,38 @@ export default function AIRoadmapPage(): JSX.Element {
                 </section>
 
                 <section id="first-week" className="mt-16 scroll-mt-32">
-                    <div className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 text-white shadow-xl shadow-slate-900/10">
-                        <div className="bg-gradient-to-r from-blue-950 to-indigo-950 px-6 py-7 sm:px-8">
-                            <p className="text-xs font-bold uppercase tracking-widest text-cyan-300">Start now · 5 hours</p>
+                    <div className="overflow-hidden rounded-3xl border t-border-100 bg-white shadow-sm">
+                        <div className="t-bg-50 border-b t-border-100 px-6 py-7 sm:px-8">
+                            <p className="text-xs font-bold uppercase tracking-widest t-text-600">Start now · 5 hours</p>
                             <div className="mt-2 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                                 <div>
                                     <h2 className="text-2xl font-bold tracking-tight">Your first week</h2>
-                                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-300">Turn the roadmap into action. Check off each session as you complete it.</p>
+                                    <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-600">Turn the roadmap into action. Check off each session as you complete it.</p>
                                 </div>
                                 <div className="sm:min-w-40">
-                                    <div className="flex justify-between text-xs font-semibold text-slate-300">
+                                    <div className="flex justify-between text-xs font-semibold text-gray-500">
                                         <span>Your progress</span><span>{completedTasks.length}/{firstWeekTasks.length} complete</span>
                                     </div>
-                                    <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/15">
-                                        <div className="h-full rounded-full bg-cyan-400 transition-all duration-300" style={{ width: `${completion}%` }} />
+                                    <div className="mt-2 h-2 overflow-hidden rounded-full bg-gray-200">
+                                        <div className="h-full rounded-full bg-blue-600 transition-all duration-300" style={{ width: `${completion}%` }} />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="divide-y divide-white/10 px-6 sm:px-8">
+                        <div className="divide-y divide-gray-100 px-6 sm:px-8">
                             {firstWeekTasks.map((task, index) => {
                                 const checked = completedTasks.includes(index);
                                 return (
                                     <label key={task.title} className="flex cursor-pointer items-start gap-4 py-5">
                                         <input type="checkbox" checked={checked} onChange={() => toggleTask(index)}
-                                            className="mt-1 h-5 w-5 shrink-0 cursor-pointer accent-cyan-400"
+                                            className="mt-1 h-5 w-5 shrink-0 cursor-pointer accent-blue-600"
                                             aria-label={`Mark ${task.title} as ${checked ? 'incomplete' : 'complete'}`} />
                                         <span className={`min-w-0 flex-1 ${checked ? 'opacity-55' : ''}`}>
                                             <span className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-                                                <span className={`font-semibold ${checked ? 'text-slate-400 line-through' : 'text-white'}`}>{task.title}</span>
-                                                <span className="text-xs text-cyan-300">{task.duration}</span>
+                                                <span className={`font-semibold ${checked ? 'text-gray-400 line-through' : 'text-gray-900'}`}>{task.title}</span>
+                                                <span className="text-xs t-text-600">{task.duration}</span>
                                             </span>
-                                            <span className="mt-1 block text-sm leading-relaxed text-slate-400">{task.detail}</span>
+                                            <span className="mt-1 block text-sm leading-relaxed text-gray-500">{task.detail}</span>
                                         </span>
                                     </label>
                                 );
