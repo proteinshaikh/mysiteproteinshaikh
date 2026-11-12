@@ -29,6 +29,7 @@ function Logo(): JSX.Element {
 const NAV_LINKS = [
     { to: '/resume',  label: '📄 Resume'  },
     { to: '/books',   label: '📚 Books'   },
+    { to: '/ai-roadmap', label: '🤖 AI Roadmap' },
 ];
 
 function Navbar(): JSX.Element {
