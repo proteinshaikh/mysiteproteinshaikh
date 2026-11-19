@@ -55,7 +55,7 @@ export default function ResumePage(): JSX.Element {
 
             {/* Header */}
             <div className="w-full t-hero-grad border-b t-border-100">
-                <div className="max-w-4xl mx-auto px-6 lg:px-16 py-14">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-14">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
                         <p className="text-xs font-semibold t-text-400 uppercase tracking-widest mb-2">Resume</p>
                         <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">Zeeshan Shaikh</h1>
@@ -71,7 +71,7 @@ export default function ResumePage(): JSX.Element {
                 </div>
             </div>
 
-            <div className="max-w-4xl mx-auto px-6 lg:px-16 py-12">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 py-8 sm:py-12">
 
                 {/* Profile */}
                 <Section title="Profile">

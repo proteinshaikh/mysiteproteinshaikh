@@ -1,10 +1,21 @@
-import React, { JSX } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, JSX } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../auth/AuthContext';
+import LoginDialog from '../auth/components/LoginDialog';
+import RegisterDialog from '../auth/components/RegisterDialog';
+import ForgotPasswordDialog from '../auth/components/ForgotPasswordDialog';
 
 function Footer(): JSX.Element {
+    const { token, logout } = useAuth();
+    const [showLogin, setShowLogin] = useState(false);
+    const [showRegister, setShowRegister] = useState(false);
+    const [showForgot, setShowForgot] = useState(false);
+
     return (
+        <>
         <footer className="w-full border-t border-indigo-100 bg-white">
-            <div className="max-w-6xl mx-auto px-6 lg:px-16 py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 py-6 sm:py-8">
 
                 {/* Contact row */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
@@ -59,8 +70,40 @@ function Footer(): JSX.Element {
                 <p className="text-xs text-gray-400 text-center">
                     &copy; {new Date().getFullYear()} Zeeshan Shaikh · Dubai, UAE
                 </p>
+
+                {/* Discreet login — for personal use only */}
+                <div className="mt-4 text-center">
+                    {token ? (
+                        <span className="text-[11px] text-gray-300">
+                            <Link to="/profile" className="hover:text-gray-400 transition-colors">profile</Link>
+                            {' · '}
+                            <button onClick={logout} className="hover:text-gray-400 transition-colors">sign out</button>
+                        </span>
+                    ) : (
+                        <button
+                            onClick={() => setShowLogin(true)}
+                            className="text-[11px] text-gray-300 hover:text-gray-400 transition-colors"
+                        >
+                            sign in
+                        </button>
+                    )}
+                </div>
             </div>
         </footer>
+
+            <AnimatePresence>
+                {showLogin && (
+                    <LoginDialog
+                        isOpen={showLogin}
+                        onClose={() => setShowLogin(false)}
+                        onRegister={() => { setShowLogin(false); setShowRegister(true); }}
+                        onForgot={() => { setShowLogin(false); setShowForgot(true); }}
+                    />
+                )}
+            </AnimatePresence>
+            <RegisterDialog isOpen={showRegister} onClose={() => setShowRegister(false)} />
+            <ForgotPasswordDialog isOpen={showForgot} onClose={() => setShowForgot(false)} />
+        </>
     );
 }
 
